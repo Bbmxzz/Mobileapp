@@ -1,72 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Todo List 2022 with LocalStorage</title>
-	<!-- CSS Import -->
-	<link rel="stylesheet" href="main.css" />
-	<!-- End of CSS Import -->
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-	<!-- End of Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="login.css" />
+    <title>Login </title>
 </head>
+
+
 <body>
-	<!-- App Wrapper -->
-	<main class="app">
-		<!-- Greeting -->
-		<section class="greeting">
-			<h2 class="title">
-				What's up, <input type="text" id="name" placeholder="Name here" />
-			</h2>
-		</section>
-		<!-- End of Greeting -->
-		
-		<!-- New Todo -->
-		<section class="create-todo">
-			<h3>CREATE A TODO</h3>
-			<form id="new-todo-form">
-				<h4>What's on your todo?</h4>
-				<input 
-					type="text" 
-					placeholder="e.g. Get some milk"
-					name="content"
-					id="content" />
-				
-				<h4>Pick a category</h4>
-				<div class="options">
-					<label>
-						<input type="radio" name="category" id="category1" value="business" /> 
-						<span class="bubble business"></span>
-						<div>Business</div>
-					</label>
-					<label>
-						<input type="radio" name="category" id="category2" value="personal" />
-						<span class="bubble personal"></span>
-						<div>Personal</div>
-					</label>
-				</div>
+<div class="container">
+  <form action="/index.html">
+    <div class="row">
+      <h2 style="text-align:center">Login with Social Media or Manually</h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
 
-				<input type="submit" value="Add todo" />
-			</form>
-		</section>
-		<!-- End of New Todo -->
+      <div class="col">
+        <a href="https://www.facebook.com/login.php" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+         </a>
+        <a href="https://twitter.com/login.php" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a href="https://mail.google.com/login.php" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
+      </div>
 
-		<!-- Todo List -->
-		<section class="todo-list">
-			<h3>TODO LIST</h3>
-			<div class="list" id="todo-list"></div>
-		</section>
-		<!-- End of Todo List -->
+      <div class="col">
+        <div class="hide-md-lg">
+          <p>Or sign in manually:</p>
+        </div>
 
-	</main>
-	<!-- End of App Wrapper -->
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+      </div>
+      
+    </div>
+  </form>
+</div>
 
-	<!-- JS Import -->
-	<script src="main.js"></script>
-	<!-- End of JS Import -->
+<div class="bottom-container">
+  <div class="row">
+    <div class="col">
+      <a href="/signup.html" style="color:white" class="btn">Sign up</a>
+    </div>
+    <div class="col">
+      <a href="#" style="color:white" class="btn">Forgot password?</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

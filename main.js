@@ -104,7 +104,6 @@ function DisplayTodos () {
 				todo.content = e.target.value;
 				localStorage.setItem('todos', JSON.stringify(todos));
 				DisplayTodos()
-
 			})
 		})
 
