@@ -235,3 +235,57 @@ input:checked ~ .bubble::after {
 	text-decoration: line-through;
 	color: var(--grey);
 }
+
+.logoutbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 50px;
+    margin: 0 1.5rem 0 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+	float: right;
+  }
+  
+.logoutbtn:hover {
+    background-color: #45a049;
+  }
+
+@media screen and (max-width: 650px) {
+	.logoutbtn {
+		background-color: #04AA6D;
+		color: white;
+		padding: 12px 40px;
+		margin: 0 1.5rem 0 0;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		width: 20px;
+		opacity: 0.9;
+		display: flex;
+		justify-content: center;
+
+	  }
+
+	.greeting .title {
+		display: flex;
+	}
+	
+	.greeting .title input {
+		margin-left: 0.5rem;
+		flex: 1 1 0%;
+		min-width: 0;
+	}
+	
+	.greeting .title, 
+	.greeting .title input {
+		color: var(--dark);
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+}
