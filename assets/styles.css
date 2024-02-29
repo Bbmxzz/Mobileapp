@@ -123,9 +123,12 @@ section .form-control:first-child input {
   padding: 10px 0;
   margin-bottom: 10px;
   text-indent: 16px;
-  width: 100%;
+  width: 300px;
   color: var(--color);
   outline: none;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 section .form-control:first-child button {
