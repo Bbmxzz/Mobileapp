@@ -23,7 +23,7 @@
 	font-family: 'montserrat', sans-serif;
 }
 
-input:not([type="radio"]):not([type="checkbox"]), button {
+input:not([type="radio"]):not([type="checkbox"]){
 	appearance: none;
 	border: none;
 	outline: none;
@@ -38,11 +38,12 @@ body {
 }
 
 section {
-	margin-top: 2rem;
+	 margin-top: 1rem;
 	margin-bottom: 2rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
+
 
 h3 {
 	color: var(--dark);
@@ -58,8 +59,57 @@ h4 {
 	margin-bottom: 0.5rem;
 }
 
+header {
+	display: inline-block;
+	background-color: #ff5b57;
+	height: 70px;
+	vertical-align: middle;
+	width: 100%;
+  }
+
+.todo{
+	display: grid;
+	grid-column: 2/4;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	background-color: #EA40A4;
+	margin-top: 0%;
+	padding-left: 2%;
+	padding-right: 2%;
+	/* width: 70% ; */
+	/* margin-left: 30%; */
+	
+}
+.date{
+	
+	font-size: 50px;
+	/* margin-right: 70%; */
+	/* margin-bottom: 1.5rem; */
+	/* width: 30%;
+	height:75%; */
+	background-color: rgb(255, 248, 57);
+}
+
+.personal{
+	border-radius: 20px;
+	background-color: #3a82ee;
+}
+.plan{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px;
+	border-radius: 30px;
+	background-color: #04AA6D;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
 .greeting .title {
 	display: flex;
+	vertical-align: middle;
 }
 
 .greeting .title input {
@@ -73,6 +123,7 @@ h4 {
 	color: var(--dark);
 	font-size: 1.5rem;
 	font-weight: 700;
+	vertical-align: middle;
 }
 
 .create-todo input[type="text"] {
@@ -105,11 +156,189 @@ h4 {
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
+.addtask{
+	position: right;
+	bottom: 100%;
+}
+ul .checked{
+	text-decoration: line-through;
+	color: var(--grey);
+}
+ul .checked::before{
+	content: '';
+	position: absolute;
+	border-color: #fff;
+	border-style: solid;
+	border-width: 0 2px 2px 0;
+	top: 10px;
+	left: 16px;
+	transform: rotate(45deg);
+	height: 15px;
+	width: 7px;
+}
+.close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+	background-color: #f44336;
+	color: white;
+  }
+
+  .addBtn {
+	padding: 10px;
+	width: 25%;
+	background: #d9d9d9;
+	color: #555;
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.3s;
+	border-radius: 0;
+  }
+  
+  .addBtn:hover {
+	background-color: #bbb;
+  }
+  
 
 input[type="radio"],
 input[type="checkbox"] {
 	display: none;
 }
+
+/* .add-task-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #39a6f0;
+    transition: all 0.3s;
+}
+
+.add-task-btn:hover {
+    transform: scale(1.1);
+}
+
+.add-task-btn.active {
+    z-index: 1;
+    bottom: 20rem;
+    transform: rotate(45deg);
+}
+
+.add-task-btn svg {
+    width: 2rem;
+    color: #fff;
+}
+
+.add-task {
+    position: absolute;
+    top:50%;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    transition: all 0.3s;
+}
+
+.add-task.active {
+    bottom: 0;
+}
+
+/* .add-task .heading {
+    font-size: 1.5rem;
+    margin-bottom: 100rem;
+} */
+
+/* .input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group label {
+    display: block;
+    width: 100%;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-group label {
+    width: max-content;
+    padding: 0 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btns button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.btns button.add-btn {
+    background-color: #39a6f0;
+    color: #fff
+}
+
+.add-task-backdrop {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 135%;
+    height: 5%;
+    border-radius: 50% 50% 0 0;
+    background-color: #fff;
+}
+
+.black-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: #00000023;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.black-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+} */
 
 .bubble {
 	display: flex;
@@ -240,7 +469,7 @@ input:checked ~ .bubble::after {
     background-color: #04AA6D;
     color: white;
     padding: 16px 50px;
-    margin: 0 1.5rem 0 0;
+    margin: 0.5rem 1.5rem 0 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -249,18 +478,20 @@ input:checked ~ .bubble::after {
     display: flex;
     justify-content: center;
 	float: right;
+	
+	
   }
   
 .logoutbtn:hover {
     background-color: #45a049;
   }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 767px) {
 	.logoutbtn {
 		background-color: #04AA6D;
 		color: white;
 		padding: 12px 40px;
-		margin: 0 1.5rem 0 0;
+		
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
@@ -287,5 +518,6 @@ input:checked ~ .bubble::after {
 		font-size: 20px;
 		font-weight: 600;
 	}
+
 
 }

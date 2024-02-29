@@ -1,16 +1,12 @@
 window.addEventListener('load', () => {
 	todos = JSON.parse(localStorage.getItem('todos')) || [];
-	const nameInput = document.querySelector('#name');
+	
 	const newTodoForm = document.querySelector('#new-todo-form');
-
-	const username = localStorage.getItem('username') || '';
-
-	nameInput.value = username;
-
-	nameInput.addEventListener('change', (e) => {
-		localStorage.setItem('username', e.target.value);
-	})
-
+	const saveLocal = () => {
+		localStorage.setItem("tasks", JSON.stringify(tasks));
+	  };
+	  
+	 
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
 
@@ -41,7 +37,13 @@ function DisplayTodos () {
 	todos.forEach(todo => {
 		const todoItem = document.createElement('div');
 		todoItem.classList.add('todo-item');
-
+		const toggleScreen = () =>{
+			screenWrapper.classList.toggle("show-category");
+		}
+		const toggleAddTaskForm = () => {
+			addTaskWrapper.classList.toggle("active");
+			addTaskBtn.classList.toggle("active");
+		  };
 		const label = document.createElement('label');
 		const input = document.createElement('input');
 		const span = document.createElement('span');
@@ -49,6 +51,10 @@ function DisplayTodos () {
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
+		const addTaskWrapper = document.querySelector(".add-task");
+		const addTaskBtn = document.querySelector(".add-task-btn");
+		const taskInput = document.getElementById("task-input");
+		
 
 		input.type = 'checkbox';
 		input.checked = todo.done;
@@ -94,6 +100,8 @@ function DisplayTodos () {
 			DisplayTodos()
 
 		})
+
+		
 
 		edit.addEventListener('click', (e) => {
 			const input = content.querySelector('input');

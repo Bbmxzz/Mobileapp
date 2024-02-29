@@ -19,56 +19,101 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 <body>
+	<header>
 	<form action="index.html">
 		<button type="submit" value="Submit" class="logoutbtn">Logout</button>
 	</form>
 	<!-- App Wrapper -->
 	<main class="app">
 		<!-- Greeting -->
-		<section class="greeting">
-			<h2 class="title">
-				What's up,&nbsp;<span id="displayName"></span>
-			</h2>
+		
+			<section>
 			
-		</section>
+			
+				<h2 class="title">
+					What's up,&nbsp;<span id="displayName"></span>
+				</h2>
+			
+			
+			</section>
+		</header>
 		<!-- End of Greeting -->
 		
 		<!-- New Todo -->
-		<section class="create-todo">
-			<h3>CREATE A TODO</h3>
-			<form id="new-todo-form">
-				<h4>What's on your todo?</h4>
-				<input 
-					type="text" 
-					placeholder="e.g. Get some milk"
-					name="content"
-					id="content" />
-				
-				<h4>Pick a category</h4>
-				<div class="options">
-					<label>
-						<input type="radio" name="category" id="category1" value="business" /> 
-						<span class="bubble business"></span>
-						<div>Business</div>
-					</label>
-					<label>
-						<input type="radio" name="category" id="category2" value="personal" />
-						<span class="bubble personal"></span>
-						<div>Personal</div>
-					</label>
-				</div>
+		<section class="plan">
+			<!-- <section class="create-todo"> -->
+				<!-- <h3>CREATE A TODO</h3> -->
+				<!-- <form id="new-todo-form">
+					<h4>What's on your todo?</h4>
+					<input 
+						type="text" 
+						placeholder="e.g. Get some milk"
+						name="content"
+						id="content" />
+					
+					<h4>Pick a category</h4>
+					<div class="options">
+						<label>
+							<input type="radio" name="category" id="category1" value="business" /> 
+							<span class="bubble business"></span>
+							<div>Business</div>
+						</label>
+						<label>
+							<input type="radio" name="category" id="category2" value="personal" />
+							<span class="bubble personal"></span>
+							<div>Personal</div>
+						</label>
+					</div>
 
-				<input type="submit" value="Add todo" />
-			</form>
-		</section>
+					<input type="submit" value="Add todo" />
+				</form> -->
+			<!-- </section> -->
+		
 		<!-- End of New Todo -->
 
 		<!-- Todo List -->
-		<section class="todo-list">
-			<h3>TODO LIST</h3>
-			<div class="list" id="todo-list"></div>
-		</section>
-		<!-- End of Todo List -->
+			
+			<div class="date">
+				todo list	
+			</div>
+			<div class="todo">
+				
+					<section class="personal">
+					
+							<h2>personal</h2>
+							<ul id="personal"></ul>
+							<div class="todo-content">
+							<input type="text" id="personaltask" placeholder="Enter text" />
+							<button onclick="addToList('personal', 'personaltask')">Add to task</button>
+							
+							
+							
+					</section>
+					<section class="personal">
+						<!-- Category 2 -->
+						<h2>business</h2>
+						<ul id="business"></ul>
+						<input type="text" id="businesstask" placeholder="Enter text">
+						<button onclick="addToList('business', 'businesstask')">Add to task</button>
+					</section>
+					<section class="personal">
+						<h2>personal</h2>
+						<ul id="personal"></ul>
+						<input type="text" id="personaltask" placeholder="Enter text">
+						<button onclick="addToList('personal', 'personaltask')">Add to task</button>
+					</section>
+					<section class="personal">
+						<!-- Category 2 -->
+						<h2>business</h2>
+						<ul id="business"></ul>
+						<input type="text" id="businesstask" placeholder="Enter text">
+						<button onclick="addToList('business', 'businesstask')">Add to task</button>
+					</section>
+				</div>
+			</div>
+	
+			<!-- End of Todo List -->
+	</section>
 
 	</main>
 	<!-- End of App Wrapper -->
@@ -76,6 +121,18 @@
 	<script src="firebase.js"></script>
 	<script src="main.js"></script>
 	<script>
+		function addToList(categoryId, inputId) {
+					const textInput = document.getElementById(inputId);
+					const text = textInput.value.trim();
+					if (text !== '') {
+					const list = document.getElementById(categoryId);
+					const listItem = document.createElement('li');
+					listItem.textContent = text;
+					list.appendChild(listItem);
+					textInput.value = ''; // Clear input field
+					}
+				}
+
 		const userData = JSON.parse(localStorage.getItem('user'));
 		console.log(userData);
 		const fetchDisplayNameFromFirestore = async () => {
