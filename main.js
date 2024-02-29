@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 window.addEventListener('load', () => {
 	todos = JSON.parse(localStorage.getItem('todos')) || [];
 	const nameInput = document.querySelector('#name');
@@ -13,31 +14,69 @@ window.addEventListener('load', () => {
 
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
+=======
+>>>>>>> Stashed changes
 
-		const todo = {
-			content: e.target.elements.content.value,
-			category: e.target.elements.category.value,
-			done: false,
-			createdAt: new Date().getTime()
-		}
+const inputBox = document.getElementById("inputBox");
+const listContainer = document.getElementById("listContainer");
 
-		todos.push(todo);
+function addTask(inputBox,listContainer) {
+    if (inputBox.value === "") {
+        alert("You must write something")
+    } else {
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value;
+        listContainer.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+    }
+    inputBox.value = "";
+    saveData();
+}
 
-		localStorage.setItem('todos', JSON.stringify(todos));
-
-		// Reset the form
-		e.target.reset();
-
-		DisplayTodos()
-	})
-
-	DisplayTodos()
+listContainer1.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveData();
+    } else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        saveData();
+    }
+})
+listContainer2.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveData();
+    } else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        saveData();
+    }
+})
+listContainer3.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveData();
+    } else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        saveData();
+    }
+})
+listContainer4.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveData();
+    } else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        saveData();
+    }
 })
 
-function DisplayTodos () {
-	const todoList = document.querySelector('#todo-list');
-	todoList.innerHTML = "";
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
 
+<<<<<<< Updated upstream
 	todos.forEach(todo => {
 		const todoItem = document.createElement('div');
 		todoItem.classList.add('todo-item');
@@ -49,20 +88,15 @@ function DisplayTodos () {
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
+=======
+function showTask() {
+    listContainer.innerHTML = localStorage.getItem("data")
+}
+>>>>>>> Stashed changes
 
-		input.type = 'checkbox';
-		input.checked = todo.done;
-		span.classList.add('bubble');
-		if (todo.category == 'personal') {
-			span.classList.add('personal');
-		} else {
-			span.classList.add('business');
-		}
-		content.classList.add('todo-content');
-		actions.classList.add('actions');
-		edit.classList.add('edit');
-		deleteButton.classList.add('delete');
+showTask()
 
+<<<<<<< Updated upstream
 		content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
@@ -115,3 +149,5 @@ function DisplayTodos () {
 
 	})
 }
+=======
+>>>>>>> Stashed changes

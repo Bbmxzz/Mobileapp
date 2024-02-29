@@ -21,6 +21,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'montserrat', sans-serif;
+	
 }
 
 input:not([type="radio"]):not([type="checkbox"]), button {
@@ -33,8 +34,9 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 /* End of Resets */
 
 body {
-	background: var(--light);
+	background: #f9f7e6;
 	color: var(--dark);
+	height: 100vh;
 }
 
 section {
@@ -58,6 +60,74 @@ h4 {
 	margin-bottom: 0.5rem;
 }
 
+<<<<<<< Updated upstream
+=======
+header {
+	display: inline-block;
+	background-color: #cdf0e4;
+	height: 70px;
+	vertical-align: middle;
+	width: 100%;
+  }
+
+.todo{
+	display: grid;
+	grid-column: 2/4;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	margin-top: 0%;
+	padding-left: 2%;
+	padding-right: 2%;
+	overflow: auto;
+	height: 100vh;
+	
+}
+.date{
+	font-size: 100px;
+	
+}
+.dateborder{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+    margin-bottom: 25px;
+	margin-top: 20%;
+	height: 40px;
+	border: 2px solid #523109;
+	font-size: large;
+}
+.gif{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	margin-top: 5%;
+}
+.gif img{
+	height: 50%;
+	width: 50%;
+}
+
+.personal{
+	border-radius: 20px;
+	background-color: #3a82ee;
+}
+.plan{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px;
+	border-radius: 30px;
+	background-color: #ecc5fb;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	
+}
+
+>>>>>>> Stashed changes
 .greeting .title {
 	display: flex;
 }
@@ -75,6 +145,7 @@ h4 {
 	font-weight: 700;
 }
 
+<<<<<<< Updated upstream
 .create-todo input[type="text"] {
 	display: block;
 	width: 100%;
@@ -243,18 +314,34 @@ input:checked ~ .bubble::after {
     margin: 0 1.5rem 0 0;
     border: none;
     border-radius: 5px;
+=======
+.logoutbtn {
+    background-color: #faf4b7;
+    color: #523109;
+    padding: 10px 50px 30px;
+    margin: 0.5rem 1.5rem 0 0;
+	border: solid 2px;
+    border-color: #523109;
+    border-radius: 50px;
+>>>>>>> Stashed changes
     cursor: pointer;
     width: 30px;
+	height: 40px;
     opacity: 0.9;
     display: flex;
     justify-content: center;
 	float: right;
+<<<<<<< Updated upstream
+=======
+		
+>>>>>>> Stashed changes
   }
   
 .logoutbtn:hover {
-    background-color: #45a049;
+    background-color: #f3b9a1;
   }
 
+<<<<<<< Updated upstream
 @media screen and (max-width: 650px) {
 	.logoutbtn {
 		background-color: #04AA6D;
@@ -268,8 +355,10 @@ input:checked ~ .bubble::after {
 		opacity: 0.9;
 		display: flex;
 		justify-content: center;
+=======
+@media screen and (max-width: 767px) {
+>>>>>>> Stashed changes
 
-	  }
 
 	.greeting .title {
 		display: flex;
@@ -288,4 +377,125 @@ input:checked ~ .bubble::after {
 		font-weight: 600;
 	}
 
+<<<<<<< Updated upstream
+=======
+
+}
+
+
+.container {
+    width: 100%;
+    
+    
+    padding: 10px;
+}
+
+.todoApp {
+    width: 100%;
+    max-width: 540px;
+    border: 2px solid #523109;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todoApp h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #523109;
+    margin-bottom: 20px;
+}
+
+.todoApp h2 img {
+    width: 50px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+	height: 30px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+button{
+    border: none;
+    outline: none;
+    /* padding: 5px 10%; */
+    background: #cdf0e4;
+    color: #5b8979;
+    font-size: 16px;
+	width: 35px; /* Adjust the width and height to change the size of the button */
+    height: 50px;
+    border-radius: 100%; /* Make it round */
+    cursor: pointer;
+	box-shadow: 0 2px 5px #5b8979;
+
+	height: 30px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    top: 12px;
+    left: 8px;
+    border-radius: 50%;
+    
+	
+	
+    background-size: cover;
+    background-position: center;
+}
+
+ul li.checked {
+    color: #555;
+	
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(./assets/verified.png);
+	height: 20px;
+	width: 20px;
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+>>>>>>> Stashed changes
 }
