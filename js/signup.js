@@ -2,7 +2,7 @@ document.getElementById("addDataForm").addEventListener("submit", async function
     event.preventDefault();
 
     // Get form values
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("newemail").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("psw").value;
     const confirmpassword = document.getElementById("psw-repeat").value;
@@ -20,11 +20,10 @@ document.getElementById("addDataForm").addEventListener("submit", async function
                 });
                 await db.collection("users").doc(user.uid).set({
                     displayName: username,
-                    email: email,
-                    password: password
+                    email: email
                 });
                 alert("User registered successfully!");
-                window.location.pathname = "/index.html";
+                window.location.pathname = "/pages/index.html";
                 document.getElementById("addDataForm").reset();
             } catch (error) {
                 console.error("Error registering user:", error);

@@ -1,4 +1,3 @@
-
 const inputBox = document.getElementById("inputBox");
 const listContainer = document.getElementById("listContainer");
 
@@ -63,4 +62,3 @@ function showTask() {
 }
 
 showTask()
-
