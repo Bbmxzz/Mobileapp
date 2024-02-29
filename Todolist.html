@@ -19,62 +19,166 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 <body>
+	
+	<header>
 	<form action="index.html">
 		<button type="submit" value="Submit" class="logoutbtn">Logout</button>
 	</form>
 	<!-- App Wrapper -->
 	<main class="app">
 		<!-- Greeting -->
-		<section class="greeting">
-			<h2 class="title">
-				What's up,&nbsp;<span id="displayName"></span>
-			</h2>
+			<section>
 			
-		</section>
+			
+				<h2 class="title">
+					What's up,&nbsp;<span id="displayName"></span>
+				</h2>
+			
+			
+			</section>
+		</header>
 		<!-- End of Greeting -->
 		
 		<!-- New Todo -->
-		<section class="create-todo">
-			<h3>CREATE A TODO</h3>
-			<form id="new-todo-form">
-				<h4>What's on your todo?</h4>
-				<input 
-					type="text" 
-					placeholder="e.g. Get some milk"
-					name="content"
-					id="content" />
-				
-				<h4>Pick a category</h4>
-				<div class="options">
-					<label>
-						<input type="radio" name="category" id="category1" value="business" /> 
-						<span class="bubble business"></span>
-						<div>Business</div>
-					</label>
-					<label>
-						<input type="radio" name="category" id="category2" value="personal" />
-						<span class="bubble personal"></span>
-						<div>Personal</div>
-					</label>
-				</div>
-
-				<input type="submit" value="Add todo" />
-			</form>
-		</section>
-		<!-- End of New Todo -->
-
+		<section class="plan">
 		<!-- Todo List -->
-		<section class="todo-list">
-			<h3>TODO LIST</h3>
-			<div class="list" id="todo-list"></div>
-		</section>
-		<!-- End of Todo List -->
+			
+			<div class="date">
+				todo list</br>
+				<div class="dateborder">
+    				<span id="datetime"></span>
+				</div>
+				<div class="gif">
+					<img src="./assets/dog-cheer.gif">
+				</div>
+			</div>
+			<div class="todo">
+				
+					
+				<div class="container">
+					<div class="todoApp">
+						<h2>Personal</h2>
+						<div class="row">
+							<input type="text" id="inputBox1" placeholder="Add your task">
+							<button onclick="addTask(inputBox1,listContainer1)">+</button>
+						</div>
+						<ul id="listContainer1">
 
+						</ul>
+					</div>
+				</div>
+				<div class="container">
+					<div class="todoApp">
+						<h2>Business</h2>
+						<div class="row">
+							<input type="text" id="inputBox2" placeholder="Add your text">
+							<button onclick="addTask(inputBox2,listContainer2)">+</button>
+						</div>
+						<ul id="listContainer2">
+							
+						</ul>
+					</div>
+				</div>
+				<div class="container">
+					<div class="todoApp">
+						<h2>Work</h2>
+						<div class="row">
+							<input type="text" id="inputBox3" placeholder="Add your text">
+							<button onclick="addTask(inputBox3,listContainer3)">+</button>
+						</div>
+						<ul id="listContainer3">
+						</ul>
+					</div>
+				</div>
+				<div class="container">
+					<div class="todoApp">
+						<h2>Health</h2>
+						<div class="row">
+							<input type="text" id="inputBox4" placeholder="Add your text">
+							<button onclick="addTask(inputBox4,listContainer4)">+</button>
+						</div>
+						<ul id="listContainer4"></ul>
+					</div>
+				</div>
+			
+				<div class="container">
+					<div class="todoApp">
+						<h2>Chores</h2>
+						<div class="row">
+							<input type="text" id="inputBox5" placeholder="Add your text">
+							<button onclick="addTask(inputBox5,listContainer5)">+</button>
+						</div>
+						<ul id="listContainer5">
+						</ul>
+					</div>
+				</div>
+				<div class="container">
+					<div class="todoApp">
+						<h2>Learn</h2>
+						<div class="row">
+							<input type="text" id="inputBox6" placeholder="Add your text">
+							<button onclick="addTask(inputBox6,listContainer6)">+</button>
+						</div>
+						<ul id="listContainer6">
+						
+						</ul>
+					</div>
+				</div>
+			</div>	
+		
+	</section>
+<!-- End of Todo List -->
 	</main>
 	<!-- End of App Wrapper -->
 
 	<script src="firebase.js"></script>
 	<script src="main.js"></script>
+	<script>
+		function addCheckbox() {
+    // Get the value from the input field
+				const customText = document.getElementById('customText').value.trim();
+				
+				// Only add a checkbox if there is custom text
+				if (customText !== '') {
+					// Create a new checkbox
+					const checkboxList = document.getElementById('checkboxList');
+					const listItem = document.createElement('li');
+					const checkbox = document.createElement('input');
+					checkbox.type = 'checkbox';
+					checkbox.id = 'checkbox_' + Date.now(); // Generate unique ID
+					listItem.appendChild(checkbox);
+					
+					// Create a label for the checkbox
+					const label = document.createElement('label');
+					label.htmlFor = checkbox.id;
+					label.textContent = customText;
+					listItem.appendChild(label);
+					
+					// Append the new checkbox to the list
+					checkboxList.appendChild(listItem);
+					
+					// Clear the input field
+					document.getElementById('customText').value = '';
+				}
+  		}
+	</script>
+	<script>
+		// create a function to update the date and time
+		function updateDateTime() {
+		  // create a new `Date` object
+		  const now = new Date();
+  
+		  // get the current date and time as a string
+		  const currentDateTime = now.toLocaleString();
+  
+		  // update the `textContent` property of the `span` element with the `id` of `datetime`
+		  document.querySelector('#datetime').textContent = currentDateTime;
+		}
+  
+		// call the `updateDateTime` function every second
+		setInterval(updateDateTime, 1000);
+	</script>		
+
 	<script>
 		const userData = JSON.parse(localStorage.getItem('user'));
 		console.log(userData);
