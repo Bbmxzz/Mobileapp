@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Todo List </title>
 	<!-- CSS Import -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="main.css" />
 	<!-- End of CSS Import -->
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +18,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
-<<<<<<< Updated upstream:pages/Todolist.html
-<body>
-	
-	<header>
-	<form action="/pages/loginandsignup.html">
-=======
 <body class="light-theme">
 	
 	<header>
 	<form action="index.html">
->>>>>>> Stashed changes:Todolist.html
 		<button type="submit" value="Submit" class="logoutbtn">Logout</button>
 		<label class="slider">
 			<input type="checkbox" id="themeSwitch">
@@ -49,25 +42,12 @@
 	<img src="./assets/logo-circle.png" class="logo">
 	<main class="app">
 		<!-- Greeting -->
-<<<<<<< Updated upstream:pages/Todolist.html
-			<section>
-			
-			
-				<h2 class="title">
-					What's up,&nbsp;<span id="displayName"></span>
-				</h2>
-			
-			
-			</section>
-		</header>
-=======
 		
 		<section class="greeting">
 			<h2 class="title">
 				What's up,&nbsp;<span id="displayName"></span>
 			</h2>
 		</section>
->>>>>>> Stashed changes:Todolist.html
 		<!-- End of Greeting -->
 		
 		<!-- New Todo -->
@@ -99,25 +79,7 @@
 							<input type="text" id="inputBox1" placeholder="Add your task">
 							<button onclick="addTask(inputBox1,listContainer1)" class="add">+</button>
 						</div>
-<<<<<<< Updated upstream:pages/Todolist.html
-						<ul id="listContainer1">
-
-						</ul>
-					</div>
-				</div>
-				<div class="container">
-					<div class="todoApp">
-						<h2>Business</h2>
-						<div class="row">
-							<input type="text" id="inputBox2" placeholder="Add your text">
-							<button onclick="addTask(inputBox2,listContainer2)">+</button>
-						</div>
-						<ul id="listContainer2">
-							
-						</ul>
-=======
 						<ul id="listContainer1"></ul>
->>>>>>> Stashed changes:Todolist.html
 					</div>
 				</div>
 				<div class="container">
@@ -178,8 +140,8 @@
 	</main>
 	<!-- End of App Wrapper -->
 
-	<script src="/firebase.js"></script>
-	<script src="/js/main.js"></script>
+	<script src="firebase.js"></script>
+	<script src="main.js"></script>
 	<script>
 		function addCheckbox() {
     // Get the value from the input field
