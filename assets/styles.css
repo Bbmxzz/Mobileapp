@@ -270,5 +270,14 @@ section .container.active .login .img-box {
   section .active {
     background-color: #fffde6;
   }
+  section .img-box {
+    background-color: #fffde6;
+  }
+  section .img-box img {
+    object-fit: cover;
+    position: absolute;
+    top: 15%;
+    left: 0;
+  }
 }
 
