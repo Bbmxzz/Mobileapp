@@ -158,6 +158,10 @@ section .form-control button {
 
 @media screen and (max-width: 767px) {
     section .container {
-        max-width: 300px;
+        max-width: 90%;
+        height: 76%;
+    }
+    section .form-control button {
+        width: 40%;
     }
 }
