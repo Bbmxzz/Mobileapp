@@ -263,3 +263,12 @@ section .container.active .login .img-box {
   }
 }
 
+@media (max-width: 767px) {
+  section .container {
+    background-color: #fffde6;
+  }
+  section .active {
+    background-color: #fffde6;
+  }
+}
+

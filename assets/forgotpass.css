@@ -13,7 +13,8 @@ body {
 
 section {
     position: relative;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,32 +22,27 @@ section {
 }
 
 section .container {
-    position: relative;
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 50%;
-    height: 50%;
+    background-color: #fffde6;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
     border: rgba(255, 255, 255, 0.4) solid thin;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5);
 }
 
 section h1 {
     font-size: 40px;
-    font-weight: 400;
-    color: #333;
+    color: #523109;
     text-align: center;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .formforgot img {
     width: 100%;
     height: 70%;
 }
-
+/*
 .icon svg {
     width: 15px;
     height: 15px;
@@ -59,18 +55,27 @@ section h1 {
 
 .form-control svg path.noFill {
     fill: none;
-}
+} */
 
 section .formforgot img {
     object-fit: cover;
     top: 0;
     left: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section .form-control {
     text-align: center;
     align-items: center;
     justify-content: center;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #fffde6;
 }
 
 section .form-control div {
@@ -79,10 +84,11 @@ section .form-control div {
 
 section .form-control p {
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 20px;
     margin-top: 20px;
     text-align: center;
+    justify-content: center;
     color: #9a0404;;
 }
 
@@ -94,26 +100,26 @@ section .form-control input {
     padding: 10px 0;
     margin-bottom: 10px;
     text-indent: 16px;
-    width: 30vw;
+    width: 75%;
     color: black;
     outline: none;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
 }
-
+/*
 section .form-control .icon {
     position: absolute;
     top: 20%;
     transform: translateZ(80%);
-    right: 8rem;
+    right: 125px;
     cursor: pointer;
     margin-bottom: 30px;
-}
+} */
 
 section .form-control h4 {
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 20px;
     text-align: center;
     color: #7a6446;
@@ -125,7 +131,7 @@ section .form-control h4 span a {
     text-decoration: none;
     font-weight: 600;
     color: #ff0066;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -133,8 +139,8 @@ section .form-control button {
     display: flex;
     text-align: center;
     justify-content: center;
-    border: 2px solid #7a6446;
-    width: 26%;
+    border: 3px solid #7a6446;
+    width: 30%;
     cursor: pointer;
     font-weight: 300;
     font-size: 16px;
@@ -143,7 +149,8 @@ section .form-control button {
     color: black;
     font-weight: 500;
     padding: 3px 0;
-    margin-top: 20px;
+    margin-top: 13px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     transition: 500ms;
