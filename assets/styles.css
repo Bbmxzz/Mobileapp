@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:  "Literata", sans-serif;
+}
+
+:root {
+  /* Colors */
+  --pink: #ff0066;
+  --lightpink: #ffcce0;
+  --blue: #1a1aff;
+  --lightblue: #ccccff;
+  --color: #4d4d4d;
+  --custom: #1a1aff;
+}
+
+body {
+  color: var( --color);
+}
+
+.img-box img {
+  width: 100%;
+  height: 70%;
+}
+
+.icon svg {
+  width: 20px;
+}
+
+.form-control svg {
+  width: 15px;
+  height: 15px;
+}
+
+.form-control svg path,
+.form-control svg circle {
+    fill: #7f6cef;
+}
+
+.form-control svg path.noFill {
+    fill: none;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 500ms;
+}
+
+section .container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background-color: #CDF0EA;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+section.active {
+  background-color: #f1d1d1;
+}
+
+section .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+section .img-box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transition: 500ms;
+}
+
+section .img-box img {
+  object-fit: cover;
+  position: absolute;
+  top: 15%;
+  left: 0;
+}
+
+section .form-box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: #fffde6;
+  transition: 500ms;
+}
+
+section form {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section .form-control:first-child {
+  text-align: center;
+}
+
+section .form-control:first-child input {
+  font-family:  "Literata" ,sans-serif;
+  border-radius: 20px;
+  border: 1px solid #7a6446;
+  background-color: #ffcce0;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  text-indent: 16px;
+  width: 100%;
+  color: var(--color);
+  outline: none;
+}
+
+section .form-control:first-child button {
+  display: block;
+  text-align: center;
+  width: 60%;
+  border: none;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #7f6cef;
+  color: white;
+  padding: 3px 0;
+  margin-top: 20px;
+  margin-left: 20%;
+  transition: 500ms;
+}
+
+section .form-control:first-child h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+  color: #523109;
+  margin-bottom: 30px;
+}
+
+section .form-control:first-child p {
+  font-size: 13px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+section .form-control:first-child span a {
+  display: block;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #9a0404;
+  text-align: right;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+section .form-control:first-child p span {
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ff0066;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+section .form-control:first-child div {
+  position: relative;
+}
+
+section .form-control:first-child .icon {
+  position: absolute;
+  top: 20%;
+  transform: translateY(5%);
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* FUNCTIONALITY */
+
+section .container .signup {
+  pointer-events: none;
+}
+
+section .container.active .signup {
+  pointer-events: initial;
+}
+
+section .container .signup .form-box {
+  top: 100%;
+}
+
+section .container.active .signup .form-box {
+  top: 0;
+}
+
+section .container .signup .img-box {
+  top: -100%;
+}
+
+section .container.active .signup .img-box {
+  top: 0;
+}
+
+section .container .login .form-box {
+  top: 0;
+}
+
+section .container.active .login .form-box {
+  top: 100%;
+}
+
+section .container .login .img-box {
+  top: 0;
+}
+
+section .container.active .login .img-box {
+  top: -100%;
+}
+
+@media (max-width: 996px) {
+  section .container {
+    max-width: 400px;
+  }
+
+  section .container .img-box {
+    display: none;
+  }
+
+  section .container .form-box {
+    width: 100%;
+  }
+
+  section .container.active .login .form-box {
+    top: -100%;
+  }
+}
+
+@media (max-width: 567px) {
+  section {
+    padding: 0 30px;
+  }
+}
+
