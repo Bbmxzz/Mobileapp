@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/forgotpass.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <title>Forgot Password</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Reset Password</h1>
+            <div class="formforgot">
+                <form onsubmit="checkEmail(event)">
+                    <img src="/assets/iconforgotpass.png" alt=""/>
+                    <div class="form-control">
+                        <p>You will receive instruction for reseting your password</p>
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="Enter Email" />
+                            <div class="icon">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248.66 247.56">
+                                    <path d="M2.24,90.15V193.4a31.17,31.17,0,0,0,5,17.33c.07.09.13.19.2.29a20.57,20.57,0,0,0,17,8.79H227.62s13.4,0,18.23-14.83a30,30,0,0,0,1.37-9.37V90.15s-48.62,38.07-101.38,72c0,0-15.83,13.57-43.35-.38Z"
+                                    />
+                                    <path d="M109.28,144.05s15.07,13.95,32,0l86.27-60.5a49.73,49.73,0,0,0,14.33-15.2c4.36-7.32,7.65-17.28,3.41-27.85a7,7,0,0,0-1-1.68h0a29.27,29.27,0,0,0-23.05-11.23H26S13.64,27.45,5.65,39.71C1.11,46.66,2,56,5.41,63.55A48.64,48.64,0,0,0,19.2,81.11Z"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <button type="submit" href="/">Send Email</button>
+                        <h4>Back to <span><a href="/pages/index.html">Login</a></span></h4>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="/firebase.js"></script>
+    <script>
+        async function checkEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            try {
+                const emailcheck = await auth.fetchSignInMethodsForEmail(email);
+                if (emailcheck.length === 0) {
+                    console.log(emailcheck);
+                    alert("Email not found. Please enter a valid email address.");
+                } else {
+                    await resetPassword(email);
+                }
+            } catch (error) {
+                console.error("Error checking email:", error);
+                alert("Error checking email. Please try again.");
+            }
+        }
+        async function resetPassword(email) {
+            try {
+                await auth.sendPasswordResetEmail(email);
+                alert("Password reset email has been sent to " + email);
+                window.location.pathname = "/pages/index.html";
+            } catch (error) {
+                console.error("Error sending password reset email:", error);
+                alert("Error sending password reset email. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
