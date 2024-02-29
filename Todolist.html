@@ -19,67 +19,27 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 <body>
-<<<<<<< Updated upstream
-=======
 	
 	<header>
->>>>>>> Stashed changes
 	<form action="index.html">
 		<button type="submit" value="Submit" class="logoutbtn">Logout</button>
 	</form>
 	<!-- App Wrapper -->
 	<main class="app">
 		<!-- Greeting -->
-<<<<<<< Updated upstream
-		<section class="greeting">
-			<h2 class="title">
-				What's up,&nbsp;<span id="displayName"></span>
-			</h2>
-=======
 			<section>
->>>>>>> Stashed changes
 			
-		</section>
+			
+				<h2 class="title">
+					What's up,&nbsp;<span id="displayName"></span>
+				</h2>
+			
+			
+			</section>
+		</header>
 		<!-- End of Greeting -->
 		
 		<!-- New Todo -->
-<<<<<<< Updated upstream
-		<section class="create-todo">
-			<h3>CREATE A TODO</h3>
-			<form id="new-todo-form">
-				<h4>What's on your todo?</h4>
-				<input 
-					type="text" 
-					placeholder="e.g. Get some milk"
-					name="content"
-					id="content" />
-				
-				<h4>Pick a category</h4>
-				<div class="options">
-					<label>
-						<input type="radio" name="category" id="category1" value="business" /> 
-						<span class="bubble business"></span>
-						<div>Business</div>
-					</label>
-					<label>
-						<input type="radio" name="category" id="category2" value="personal" />
-						<span class="bubble personal"></span>
-						<div>Personal</div>
-					</label>
-				</div>
-
-				<input type="submit" value="Add todo" />
-			</form>
-		</section>
-		<!-- End of New Todo -->
-
-		<!-- Todo List -->
-		<section class="todo-list">
-			<h3>TODO LIST</h3>
-			<div class="list" id="todo-list"></div>
-		</section>
-		<!-- End of Todo List -->
-=======
 		<section class="plan">
 		<!-- Todo List -->
 			
@@ -103,7 +63,6 @@
 							<button onclick="addTask(inputBox1,listContainer1)">+</button>
 						</div>
 						<ul id="listContainer1">
->>>>>>> Stashed changes
 
 						</ul>
 					</div>
@@ -175,8 +134,6 @@
 	<script src="firebase.js"></script>
 	<script src="main.js"></script>
 	<script>
-<<<<<<< Updated upstream
-=======
 		function addCheckbox() {
     // Get the value from the input field
 				const customText = document.getElementById('customText').value.trim();
@@ -223,7 +180,6 @@
 	</script>		
 
 	<script>
->>>>>>> Stashed changes
 		const userData = JSON.parse(localStorage.getItem('user'));
 		console.log(userData);
 		const fetchDisplayNameFromFirestore = async () => {
