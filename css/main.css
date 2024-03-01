@@ -56,13 +56,13 @@ body.dark-theme {
 		display: none;
 	}
 	ul li::before{
-		background-image: url(./assets/dry-clean\ \(1\).png);
+		background-image: url(/assets/dry-clean\ \(1\).png);
 	}
 	ul li.checked::before{
-		background-image: url(./assets/verified\ \(1\).png);
+		background-image: url(/assets/verified\ \(1\).png);
 	}
 	ul li.checked{
-		color: #ffffff;
+		color: #a9a9a9;
 	}
 	ul li span{
 		color: #ffffff;
@@ -93,6 +93,13 @@ body.dark-theme {
 	}
 	h2{
 		color: #ffffff;
+	}
+	::-webkit-scrollbar-track {
+		background: #edeef0; /* color of the track */
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background-color: #37B5B6; /* color of the scroll thumb */
 	}
 }
 
@@ -147,8 +154,7 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 5%;
 	width: 350px;
 	height: 40px;
 	border: 2px solid #523109;
@@ -157,12 +163,12 @@ header {
 .todolistlogo-brown{
 	display: flex;
 	width: 50%;
-	margin: 0 0 0 25%;
+	margin: 0 0 0 13%;
 }
 .todolistlogo-white{
 	display: none;
 	width: 50%;
-	margin: 0 0 0 27%;
+	margin: 0 0 0 14%;
 }
 .calendar{
 	height: 20px;
@@ -174,24 +180,21 @@ header {
 }
 .gif{
 	display: flex;
-    align-items: center;
-    justify-content: center;
-	margin-top: 5%;
+	margin-top: 8%;
 }
 .gif img{
 	height: 35%;
 	width: 35%;
+	margin-left: 19%;
 }
 .gif2{
 	display: none;
-    align-items: center;
-    justify-content: center;
 	margin-top: 5%;
 }
 .gif2 img{
 	height: 45%;
 	width: 45%;
-	margin-left: 5%;
+	margin-left: 16%;
 }
 
 .personal{
@@ -248,7 +251,6 @@ header {
     border-radius: 50px;
     cursor: pointer;
     width: 6%;
-	height: 40px;
     opacity: 0.9;
     display: flex;
     justify-content: center;
@@ -259,16 +261,18 @@ header {
 .logoutbtn:hover {
     background-color: #f3b9a1;
   }
-
+.logoutbtn2{
+	display: none;
+}
 
 .slider {
 	position: relative;
 	display: flex;
     justify-content: center;
 	float: inline-end;
-	width: 60px;
-	height: 34px;
-	margin: 1.1rem 5% 0 0;
+	width: 5%;
+	height: 5vh;
+	margin: 1.1% 5% 0 0;
 }
 
 /* Style for the slider */
@@ -288,7 +292,7 @@ header {
 	border: 1px solid #523109;
 	border-radius: 40px;
 	transition: .4s;
-	width: 75px;
+	width: 100%;
 }
 
 /* Style for the slider thumb */
@@ -303,9 +307,9 @@ header {
 	border: 1px solid #523109;
 	border-radius: 60px;
 	transition: .4s;
-	width:30px;
-	height: 30px;
-	margin: 2%;
+	width: 4vh;
+	height: 4vh;
+	margin: 0.3vh;
 }
 
 /* Move the thumb when the input is checked */
@@ -325,6 +329,13 @@ header {
 .slider-label {
 	margin-left: 10px;
 }
+/* .addtext{
+	width: 70%;
+} */
+.add{
+	width: 4vh;
+	font-size: 24px;
+}
 
 @media screen and (max-width: 767px) {
 
@@ -336,6 +347,7 @@ header {
 
 	.greeting .title {
 		display: flex;
+		margin-top: 2.7vh;
 	}
 	
 	.greeting .title input {
@@ -360,10 +372,9 @@ header {
 		
 	}
 	.plan{
-		overflow:scroll;
 		margin-top: 10%;
 		margin-bottom: 5%;
-		height: 80vh;
+		height: 82vh;
 	}
 	.date{
 		display: block;
@@ -371,14 +382,6 @@ header {
 		margin-bottom: 0%;
 		
 	}
-	   /* .date img{
-		display: block;
-		margin: 0%;
-		width: 90%;
-		height: 100%;
-		margin-left: 25%;
-		margin-right: auto;
-	   } */
 	.dateborder{
 		display: none;
 	}
@@ -387,19 +390,63 @@ header {
 	}
 	.gif2{
 		display: none;
-   }
+	}
 	.todolistlogo-brown{
-		justify-content: center;
+		margin: 0 0 0 27%;
 	}
 	.todolistlogo-white{
-		justify-content: center;
+		margin: 0 0 0 29%;
+	}
+	.logo{
+		margin-left: 5%;
+		margin-right: 2%;
+	}
+	.addtext{
+		width: 70%;
 	}
 	.add{
-		width: 13%;
+		width: 3.5vh;
 	}
 
-}
+	.logoutbtn2 {
+		background-color: #faf4b7;
+		color: #523109;
+		padding: 10px 50px 30px;
+		margin-left: auto;
+		margin-right: auto;
+		border: solid 2px;
+		border-color: #523109;
+		border-radius: 50px;
+		cursor: pointer;
+		width: 6%;
+		opacity: 0.9;
+		display: flex;
+		justify-content: center;
+	}
+	  
+	.logoutbtn2:hover {
+		background-color: #f3b9a1;
+	}
 
+	.logoutbtn{
+		display: none;
+	}
+
+	.slider{
+		margin-right: 5%;
+		margin-top: 3.5%;
+		width: 10vh;
+		height: 5vh;
+	}
+	.slider .slider-track{
+		width: 10vh;
+	}
+	.slider .slider-thumb{
+		width: 4vh;
+		height: 4vh;
+		margin: 0.4vh;
+	}
+}
 
 .container {
     width: 100%;
@@ -482,7 +529,7 @@ ul li::before {
     left: 8px;
     background-size: cover;
     background-position: center;
-	background-image: url(../assets/dry-clean.png);
+	background-image: url(/assets/dry-clean.png);
 }
 
 ul li.checked {
@@ -491,7 +538,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-    background-image: url(../assets/verified.png);
+    background-image: url(/assets/verified.png);
 	height: 20px;
 	width: 20px;
 }
@@ -511,4 +558,24 @@ ul li span {
 
 ul li span:hover {
     background: #edeef0;
+}
+
+/* For WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+	width: 10px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+	background: #f9f7e6; /* color of the track */
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #cdf0e4; /* color of the scroll thumb */
+	border-radius: 20px; /* roundness of the scroll thumb */
+	border: none; /* creates padding around scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: none; /* color of the scroll thumb on hover */
 }

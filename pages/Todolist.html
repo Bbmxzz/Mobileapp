@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Todo List </title>
 	<!-- CSS Import -->
-	<link rel="stylesheet" href="../css/main.css" />
+	<link rel="stylesheet" href="/css/main.css" />
 	<!-- End of CSS Import -->
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,7 +76,7 @@
 					<div class="todoApp">
 						<h2>Personal</h2>
 						<div class="row">
-							<input type="text" id="inputBox1" placeholder="Add your task">
+							<input type="text" id="inputBox1" placeholder="Add your task" class="addtext">
 							<button onclick="addTask(inputBox1,1)" class="add">+</button>
 						</div>
 						<ul id="listContainer1"></ul>
@@ -86,7 +86,7 @@
 					<div class="todoApp">
 						<h2>Work</h2>
 						<div class="row">
-							<input type="text" id="inputBox2" placeholder="Add your text">
+							<input type="text" id="inputBox2" placeholder="Add your text" class="addtext">
 							<button onclick="addTask(inputBox2,2)" class="add">+</button>
 						</div>
 						<ul id="listContainer2"></ul>
@@ -96,7 +96,7 @@
 					<div class="todoApp">
 						<h2>Shop</h2>
 						<div class="row">
-							<input type="text" id="inputBox3" placeholder="Add your text">
+							<input type="text" id="inputBox3" placeholder="Add your text" class="addtext">
 							<button onclick="addTask(inputBox3,3)" class="add">+</button>
 						</div>
 						<ul id="listContainer3"></ul>
@@ -106,7 +106,7 @@
 					<div class="todoApp">
 						<h2>Health</h2>
 						<div class="row">
-							<input type="text" id="inputBox4" placeholder="Add your text">
+							<input type="text" id="inputBox4" placeholder="Add your text" class="addtext">
 							<button onclick="addTask(inputBox4,4)" class="add">+</button>
 						</div>
 						<ul id="listContainer4"></ul>
@@ -117,7 +117,7 @@
 					<div class="todoApp">
 						<h2>Chores</h2>
 						<div class="row">
-							<input type="text" id="inputBox5" placeholder="Add your text">
+							<input type="text" id="inputBox5" placeholder="Add your text" class="addtext">
 							<button onclick="addTask(inputBox5,5)" class="add">+</button>
 						</div>
 						<ul id="listContainer5"></ul>
@@ -127,7 +127,7 @@
 					<div class="todoApp">
 						<h2>Study</h2>
 						<div class="row">
-							<input type="text" id="inputBox6" placeholder="Add your text">
+							<input type="text" id="inputBox6" placeholder="Add your text" class="addtext">
 							<button onclick="addTask(inputBox6,6)" class="add">+</button>
 						</div>
 						<ul id="listContainer6"></ul>
@@ -137,39 +137,45 @@
 		
 	</section>
 <!-- End of Todo List -->
+
+	<form action="/pages/loginandsignup.html">
+		<button type="submit" value="Submit" class="logoutbtn2">Logout</button>
+	</form>
+	
+
 	</main>
 	<!-- End of App Wrapper -->
 
 	<script src="/firebase.js"></script>
-	<script src="../js/createfirebase.js"></script>
+	<script src="/js/createfirebase.js"></script>
 	<script>
 		function addCheckbox() {
-    		// Get the value from the input field
-    		const customText = document.getElementById('customText').value.trim();
-            
-    		// Only add a checkbox if there is custom text
-    		if (customText !== '') {
-        		// Create a new checkbox
-        		const checkboxList = document.getElementById('checkboxList');
-        		const listItem = document.createElement('li');
-        		const checkbox = document.createElement('input');
-        		checkbox.type = 'checkbox';
-        		checkbox.id = 'checkbox_' + Date.now(); // Generate unique ID
-        		listItem.appendChild(checkbox);
-                
-        		// Create a label for the checkbox
-        		const label = document.createElement('label');
-        		label.htmlFor = checkbox.id;
-        		label.textContent = customText;
-        		listItem.appendChild(label);
-                
-        		// Append the new checkbox to the list
-        		checkboxList.appendChild(listItem);
-                
-        		// Clear the input field
-        		document.getElementById('customText').value = '';
-    		}
-		}
+    // Get the value from the input field
+				const customText = document.getElementById('customText').value.trim();
+				
+				// Only add a checkbox if there is custom text
+				if (customText !== '') {
+					// Create a new checkbox
+					const checkboxList = document.getElementById('checkboxList');
+					const listItem = document.createElement('li');
+					const checkbox = document.createElement('input');
+					checkbox.type = 'checkbox';
+					checkbox.id = 'checkbox_' + Date.now(); // Generate unique ID
+					listItem.appendChild(checkbox);
+					
+					// Create a label for the checkbox
+					const label = document.createElement('label');
+					label.htmlFor = checkbox.id;
+					label.textContent = customText;
+					listItem.appendChild(label);
+					
+					// Append the new checkbox to the list
+					checkboxList.appendChild(listItem);
+					
+					// Clear the input field
+					document.getElementById('customText').value = '';
+				}
+  		}
 	</script>
 	<script>
 		// create a function to update the date and time
