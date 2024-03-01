@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="/assets/styles.css" />
     <title>Login Form | Sign Up</title>
 </head>
 <body>
@@ -15,14 +12,17 @@
         <div class="container">
             <div class="user login">
                 <div class="img-box">
-                    <img src="../assets/iconlogin.png" alt="" />
+                    <img src="/assets/iconlogin.png" alt="" />
                 </div>
                 <div class="form-box">
-                    <form id="checkDataForm" onsubmit="login(event)">
+                    <form action="">
                         <div class="form-control">
+                            <div class="img-hidden">
+                                <img src="/assets/iconlogin.png" alt="" />
+                            </div>
                             <h2>Login</h2>
                             <div>
-                                <input type="email" name="email" id="email" placeholder="Email" />
+                                <input type="email" name="usrEmail" placeholder="Email" />
                                 <div class="icon form-icon">
                                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248.66 247.56">
                                         <path d="M2.24,90.15V193.4a31.17,31.17,0,0,0,5,17.33c.07.09.13.19.2.29a20.57,20.57,0,0,0,17,8.79H227.62s13.4,0,18.23-14.83a30,30,0,0,0,1.37-9.37V90.15s-48.62,38.07-101.38,72c0,0-15.83,13.57-43.35-.38Z"
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div>
-                                <input type="password" name="password" id="password" placeholder="Password" />
+                                <input type="password" name="usrPass" placeholder="Password" />
                                 <div class="icon form-icon">
                                     <svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42px" height="42px" viewBox="-0.5 0.5 42 42">
                                         <g>
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <span><a href="/pages/forgotpass.html">Forgot Password</a></span>
-                            <button type="submit">Login</button>
+                            <button type="submit" href="/">Login</button>
                             <p>Don't have an Account?   <span>Create</span></p>
                         </div>
                     </form>
@@ -58,12 +58,15 @@
 
             <div class="user signup">
                 <div class="form-box">
-                    <form id="addDataForm">
+                    <form action="">
                         <div class="form-control">
+                            <div class="img-hidden">
+                                <img src="/assets/iconsignup2.png" alt="" />
+                            </div>
                             <h2>Sign Up</h2>
                             
                             <div>
-                                <input type="text" name="username" id="username" placeholder="Username" />
+                                <input type="text" name="usrName" placeholder="Username" />
                                 <div class="icon form-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247 247">
                                         <circle cx="123.18" cy="62.73" r="61.69"/>
@@ -74,7 +77,7 @@
                                 </div>
                             </div>
                             <div>
-                                <input type="email" name="newemail" id="newemail" placeholder="Email" />
+                                <input type="email" name="usrEmail" placeholder="Email" />
                                 <div class="icon form-icon">
                                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248.66 247.56">
                                         <path d="M2.24,90.15V193.4a31.17,31.17,0,0,0,5,17.33c.07.09.13.19.2.29a20.57,20.57,0,0,0,17,8.79H227.62s13.4,0,18.23-14.83a30,30,0,0,0,1.37-9.37V90.15s-48.62,38.07-101.38,72c0,0-15.83,13.57-43.35-.38Z"
@@ -85,7 +88,7 @@
                                 </div>
                             </div>
                             <div>
-                                <input type="password" name="psw" id="psw" placeholder="Password" />
+                                <input type="password" name="usrPass" placeholder="Password" />
                                 <div class="icon form-icon">
                                     <svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42px" height="42px" viewBox="-0.5 0.5 42 42">
                                         <g>
@@ -102,7 +105,7 @@
                             </div>
                             <div>
                                 
-                                <input type="password" name="psw-repeat" id="psw-repeat" placeholder="Confirm Password" />
+                                <input type="password" name="confPass" placeholder="Confirm Password" />
                                 <div class="icon form-icon">
                                     <svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42px" height="42px" viewBox="-0.5 0.5 42 42">
                                         <g>
@@ -118,13 +121,13 @@
                                 </div>
                                 
                             </div>
-                            <button type="submit">Register</button>
+                            <button type="submit" href="/">Register</button>
                             <p>Already have an Account?   <span>Login</span></p>
                         </div>
                     </form>
                 </div>
                 <div class="img-box">
-                    <img src="../assets/iconsignup2.png" alt="" />
+                    <img src="/assets/iconsignup2.png" alt="" />
                 </div>
             </div>
 
@@ -132,31 +135,5 @@
     </section>
 
     <script src="/js/index.js"></script>
-    <script src="/firebase.js"></script>
-    <script>
-        function login(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    
-                    console.log(user);
-                    alert("Login successful!");
-                    window.location.href = "/pages/Todolist.html";
-                    localStorage.setItem('user', JSON.stringify(user));   
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.error(errorCode, errorMessage);
-                    alert("Invalid email or password.");
-                });
-        }
-    </script>
-    <script src="/js/signup.js"></script>
-
 </body>
 </html>
