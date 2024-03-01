@@ -315,7 +315,7 @@ header {
 
 /* Move the thumb when the input is checked */
 .slider input:checked + .slider-track {
-	background-color: #808080;
+	background-color: #909090;
 }
 
 /* Slide the thumb to the right when the input is checked */
