@@ -136,7 +136,7 @@ header {
 
 .todo{
 	display: grid;
-	grid-column: 2/4;
+	grid-column: 2/12;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 1rem;
 	margin-top: 0%;
@@ -144,18 +144,18 @@ header {
 	padding-right: 2%;
 	overflow: auto;
 	height: 80vh;
-	
 }
 .date{
-	font-size: 100px;
+	grid-column: 1/2;
 }
 .dateborder{
 	display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-	margin-left: 5%;
-	width: 350px;
+	margin-top: 10%;
+	margin-left: 8.5%;
+	width: 45vh;
 	height: 40px;
 	border: 2px solid #523109;
 	font-size: large;
@@ -163,12 +163,12 @@ header {
 .todolistlogo-brown{
 	display: flex;
 	width: 50%;
-	margin: 0 0 0 13%;
+	margin: 0 0 0 25%;
 }
 .todolistlogo-white{
 	display: none;
-	width: 50%;
-	margin: 0 0 0 14%;
+	width: 52%;
+	margin: 0 0 0 25%;
 }
 .calendar{
 	height: 20px;
@@ -180,21 +180,21 @@ header {
 }
 .gif{
 	display: flex;
-	margin-top: 8%;
+	margin-top: 15%;
 }
 .gif img{
-	height: 35%;
-	width: 35%;
-	margin-left: 19%;
+	height: 40%;
+	width: 40%;
+	margin-left: 30%;
 }
 .gif2{
 	display: none;
-	margin-top: 5%;
+	margin-top: 15%;
 }
 .gif2 img{
 	height: 45%;
 	width: 45%;
-	margin-left: 16%;
+	margin-left: 30%;
 }
 
 .personal{
@@ -203,7 +203,7 @@ header {
 }
 .plan{
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: 30% 50%;
 	gap: 10px;
 	border-radius: 30px;
 	background-color: #ecc5fb;
@@ -224,7 +224,7 @@ header {
 .greeting .title {
 	display: flex;
 	vertical-align: middle;
-	margin: 1.2rem 0 0 0;
+	margin: 2.6vh 0 0 0;
 }
 
 .greeting .title input {
@@ -272,7 +272,7 @@ header {
 	float: inline-end;
 	width: 5%;
 	height: 5vh;
-	margin: 1.1% 5% 0 0;
+	margin: 2.2vh 5% 0 0;
 }
 
 /* Style for the slider */
@@ -375,6 +375,7 @@ header {
 		margin-top: 10%;
 		margin-bottom: 5%;
 		height: 82vh;
+		grid-template-columns: auto auto auto;
 	}
 	.date{
 		display: block;
@@ -446,12 +447,14 @@ header {
 		height: 4vh;
 		margin: 0.4vh;
 	}
+	.bottombar{
+		height: 10vh;
+		padding-top: 1vh;
+	}
 }
 
 .container {
     width: 100%;
-    
-    
     padding: 10px;
 }
 
@@ -471,10 +474,6 @@ header {
     margin-bottom: 20px;
 }
 
-.todoApp h2 img {
-    width: 50px;
-    margin-left: 10px;
-}
 
 .row {
     display: flex;
@@ -507,7 +506,6 @@ button{
     border-radius: 100%; /* Make it round */
     cursor: pointer;
 	box-shadow: 0 2px 5px #5b8979;
-
 	height: 30px;
 }
 
