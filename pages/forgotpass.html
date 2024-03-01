@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/forgotpass.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <title>Forgot Password</title>
 </head>
 <body>
@@ -11,19 +14,52 @@
         <div class="container">
             <h1>Password Reset</h1>
             <div class="formforgot">
-                <form action="">
+                <form onsubmit="checkEmail(event)">
                     <img src="../assets/iconforgotpass.png" alt=""/>
                     <div class="form-control">
                         <p>You will receive instruction for reseting your password</p>
                         <div>
-                            <input type="email" name="usrEmail" placeholder="Enter Email" />
+                            <input type="email" name="email" id="email" placeholder="Enter Email" />
                         </div>
-                        <button type="submit" href="/">Send Email</button>
+                        <button type="submit">Send Email</button>
                         <h4> Back to <span><a href="/pages/loginandsignup.html">Login</a></span></h4>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <script src="/firebase.js"></script>
+    <script>
+        async function checkEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+    
+            // Check if email exists in Firebase Authentication
+            try {
+                const emailcheck = await auth.fetchSignInMethodsForEmail(email);
+                if (emailcheck.length === 0) {
+                    alert("Email not found. Please enter a valid email address.");
+                } else {
+                    // Email exists, proceed to send password reset email
+                    await resetPassword(email);
+                }
+            } catch (error) {
+                console.error("Error checking email:", error);
+                alert("Error checking email. Please try again.");
+            }
+        }
+    
+        async function resetPassword(email) {
+            try {
+                // Use Firebase Authentication to send password reset email
+                await auth.sendPasswordResetEmail(email);
+                alert("Password reset email has been sent to " + email);
+                window.location.pathname = "/pages/loginandsignup.html";
+            } catch (error) {
+                console.error("Error sending password reset email:", error);
+                alert("Error sending password reset email. Please try again.");
+            }
+        }
+    </script>
 </body>
 </html>
