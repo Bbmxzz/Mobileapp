@@ -34,13 +34,11 @@
             event.preventDefault();
             const email = document.getElementById("email").value;
     
-            // Check if email exists in Firebase Authentication
             try {
                 const emailcheck = await auth.fetchSignInMethodsForEmail(email);
                 if (emailcheck.length === 0) {
                     alert("Email not found. Please enter a valid email address.");
                 } else {
-                    // Email exists, proceed to send password reset email
                     await resetPassword(email);
                 }
             } catch (error) {
@@ -51,7 +49,6 @@
     
         async function resetPassword(email) {
             try {
-                // Use Firebase Authentication to send password reset email
                 await auth.sendPasswordResetEmail(email);
                 alert("Password reset email has been sent to " + email);
                 window.location.pathname = "/pages/loginandsignup.html";

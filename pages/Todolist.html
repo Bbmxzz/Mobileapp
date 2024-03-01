@@ -5,15 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Todo List </title>
-	<!-- CSS Import -->
+
 	<link rel="stylesheet" href="/css/main.css" />
-	<!-- End of CSS Import -->
-	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-	<!-- End of Fonts -->
-
+	
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -29,8 +26,6 @@
 				<span class="slider-thumb"></span>
 				<script>
 					const themeSwitch = document.getElementById('themeSwitch');
-			
-					// Add event listener to detect theme switch
 					themeSwitch.addEventListener('change', () => {
 						document.body.classList.toggle('dark-theme');
 					});
@@ -38,22 +33,15 @@
 			</span>
 		</label>
 	</form>
-	<!-- App Wrapper -->
 	<img src="../assets/logo-circle.png" class="logo">
 	<main class="app">
-		<!-- Greeting -->
-		
 		<section class="greeting">
 			<h2 class="title">
 				What's up,&nbsp;<span id="displayName"></span>
 			</h2>
 		</section>
-		<!-- End of Greeting -->
-		
-		<!-- New Todo -->
+
 		<section class="plan">
-		<!-- Todo List -->
-			
 			<div class="date">
 				<img src="../assets/todolistlogo-brown.png" class="todolistlogo-brown">
 				<img src="../assets/todolistlogo-white.png" class="todolistlogo-white">
@@ -70,8 +58,6 @@
 				</div>
 			</div>
 			<div class="todo">
-				
-					
 				<div class="container">
 					<div class="todoApp">
 						<h2>Personal</h2>
@@ -112,7 +98,6 @@
 						<ul id="listContainer4"></ul>
 					</div>
 				</div>
-			
 				<div class="container">
 					<div class="todoApp">
 						<h2>Chores</h2>
@@ -134,63 +119,49 @@
 					</div>
 				</div>
 			</div>	
-		
-	</section>
-<!-- End of Todo List -->
+		</section>
 
-	<form action="/pages/loginandsignup.html" class="bottombar">
-		<button type="submit" value="Submit" class="logoutbtn2">Logout</button>
-	</form>
+		<form action="/pages/loginandsignup.html" class="bottombar">
+			<button type="submit" value="Submit" class="logoutbtn2">Logout</button>
+		</form>
 	
 
 	</main>
-	<!-- End of App Wrapper -->
 
 	<script src="/firebase.js"></script>
 	<script src="/js/createfirebase.js"></script>
 	<script>
 		function addCheckbox() {
-    // Get the value from the input field
 				const customText = document.getElementById('customText').value.trim();
 				
-				// Only add a checkbox if there is custom text
 				if (customText !== '') {
-					// Create a new checkbox
 					const checkboxList = document.getElementById('checkboxList');
 					const listItem = document.createElement('li');
 					const checkbox = document.createElement('input');
 					checkbox.type = 'checkbox';
-					checkbox.id = 'checkbox_' + Date.now(); // Generate unique ID
+					checkbox.id = 'checkbox_' + Date.now();
 					listItem.appendChild(checkbox);
 					
-					// Create a label for the checkbox
 					const label = document.createElement('label');
 					label.htmlFor = checkbox.id;
 					label.textContent = customText;
 					listItem.appendChild(label);
 					
-					// Append the new checkbox to the list
 					checkboxList.appendChild(listItem);
 					
-					// Clear the input field
 					document.getElementById('customText').value = '';
 				}
   		}
 	</script>
 	<script>
-		// create a function to update the date and time
 		function updateDateTime() {
-		  // create a new `Date` object
 		  const now = new Date();
-  
-		  // get the current date and time as a string
+
 		  const currentDateTime = now.toLocaleString();
-  
-		  // update the `textContent` property of the `span` element with the `id` of `datetime`
+
 		  document.querySelector('#datetime').textContent = currentDateTime;
 		}
-  
-		// call the `updateDateTime` function every second
+
 		setInterval(updateDateTime, 1000);
 	</script>		
 
@@ -199,20 +170,20 @@
 		console.log(userData);
 		const fetchDisplayNameFromFirestore = async () => {
 			try {
-				const snapshot = await db.collection('users').get(); // เลือกคอลเล็กชันที่ต้องการดึงข้อมูล
+				const snapshot = await db.collection('users').get();
 				snapshot.forEach(doc => {
-					if (doc.id === userData.uid) { // เปรียบเทียบ uid ของเอกสารกับ uid ของผู้ใช้ที่ล็อกอิน
-                		const userData = doc.data().displayName; // ดึงข้อมูลผู้ใช้จากเอกสาร
-                		console.log(userData); // แสดงข้อมูลผู้ใช้ในคอนโซล
+					if (doc.id === userData.uid) {
+                		const userData = doc.data().displayName;
+                		console.log(userData);
 						document.getElementById('displayName').textContent = userData;
-            }
+            		}
 				});
-			} catch (error) {
+			}
+			catch (error) {
 				console.error('Error fetching displayName:', error);
 			}
 		};
 	
-		// เรียกใช้งานฟังก์ชันดึงข้อมูล displayName
 		fetchDisplayNameFromFirestore();
 	</script>
 

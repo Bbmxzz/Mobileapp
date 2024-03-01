@@ -42,20 +42,7 @@ section h1 {
     width: 100%;
     height: 70%;  
 }
-/*
-.icon svg {
-    width: 15px;
-    height: 15px;
-}
 
-.form-control svg path,
-.form-control svg circle {
-    fill: #7f6cef;
-}
-
-.form-control svg path.noFill {
-    fill: none;
-} */
 
 section .formforgot img {
     object-fit: cover;
@@ -107,15 +94,7 @@ section .form-control input {
     margin-left: auto;
     margin-right: auto;
 }
-/*
-section .form-control .icon {
-    position: absolute;
-    top: 20%;
-    transform: translateZ(80%);
-    right: 125px;
-    cursor: pointer;
-    margin-bottom: 30px;
-} */
+
 
 section .form-control h4 {
     font-size: 15px;

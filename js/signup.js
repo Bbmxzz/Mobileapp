@@ -1,7 +1,6 @@
 document.getElementById("addDataForm").addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    // Get form values
     const email = document.getElementById("newemail").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("psw").value;
