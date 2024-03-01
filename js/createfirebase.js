@@ -71,6 +71,10 @@ listContainer2.addEventListener("click", function (e) {
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer2);
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
+        console.log("Task Name:", taskName);
+
+        deleteTask(taskName, "2");
     }
 })
 listContainer3.addEventListener("click", function (e) {
@@ -87,6 +91,10 @@ listContainer3.addEventListener("click", function (e) {
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer3);
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
+        console.log("Task Name:", taskName);
+
+        deleteTask(taskName, "3");
     }
 })
 listContainer4.addEventListener("click", function (e) {
@@ -103,6 +111,10 @@ listContainer4.addEventListener("click", function (e) {
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer4);
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
+        console.log("Task Name:", taskName);
+
+        deleteTask(taskName, "4");
     }
 })
 listContainer5.addEventListener("click", function (e) {
@@ -119,6 +131,10 @@ listContainer5.addEventListener("click", function (e) {
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer5);
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
+        console.log("Task Name:", taskName);
+
+        deleteTask(taskName, "5");
     }
 })
 listContainer6.addEventListener("click", function (e) {
@@ -135,6 +151,10 @@ listContainer6.addEventListener("click", function (e) {
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer6);
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
+        console.log("Task Name:", taskName);
+
+        deleteTask(taskName, "6");
     }
 })
 
