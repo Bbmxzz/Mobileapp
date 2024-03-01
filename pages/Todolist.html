@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Todo List </title>
 	<!-- CSS Import -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="../css/main.css" />
 	<!-- End of CSS Import -->
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,35 +141,35 @@
 	<!-- End of App Wrapper -->
 
 	<script src="/firebase.js"></script>
-	<script src="/js/createfirebase.js"></script>
+	<script src="../js/createfirebase.js"></script>
 	<script>
 		function addCheckbox() {
-    // Get the value from the input field
-				const customText = document.getElementById('customText').value.trim();
-				
-				// Only add a checkbox if there is custom text
-				if (customText !== '') {
-					// Create a new checkbox
-					const checkboxList = document.getElementById('checkboxList');
-					const listItem = document.createElement('li');
-					const checkbox = document.createElement('input');
-					checkbox.type = 'checkbox';
-					checkbox.id = 'checkbox_' + Date.now(); // Generate unique ID
-					listItem.appendChild(checkbox);
-					
-					// Create a label for the checkbox
-					const label = document.createElement('label');
-					label.htmlFor = checkbox.id;
-					label.textContent = customText;
-					listItem.appendChild(label);
-					
-					// Append the new checkbox to the list
-					checkboxList.appendChild(listItem);
-					
-					// Clear the input field
-					document.getElementById('customText').value = '';
-				}
-  		}
+    		// Get the value from the input field
+    		const customText = document.getElementById('customText').value.trim();
+            
+    		// Only add a checkbox if there is custom text
+    		if (customText !== '') {
+        		// Create a new checkbox
+        		const checkboxList = document.getElementById('checkboxList');
+        		const listItem = document.createElement('li');
+        		const checkbox = document.createElement('input');
+        		checkbox.type = 'checkbox';
+        		checkbox.id = 'checkbox_' + Date.now(); // Generate unique ID
+        		listItem.appendChild(checkbox);
+                
+        		// Create a label for the checkbox
+        		const label = document.createElement('label');
+        		label.htmlFor = checkbox.id;
+        		label.textContent = customText;
+        		listItem.appendChild(label);
+                
+        		// Append the new checkbox to the list
+        		checkboxList.appendChild(listItem);
+                
+        		// Clear the input field
+        		document.getElementById('customText').value = '';
+    		}
+		}
 	</script>
 	<script>
 		// create a function to update the date and time

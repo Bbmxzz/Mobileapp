@@ -23,7 +23,7 @@ document.getElementById("addDataForm").addEventListener("submit", async function
                     email: email
                 });
                 alert("User registered successfully!");
-                window.location.pathname = "/pages/index.html";
+                window.location.pathname = "../pages/loginandsignup.html";
                 document.getElementById("addDataForm").reset();
             } catch (error) {
                 console.error("Error registering user:", error);

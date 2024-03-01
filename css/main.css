@@ -482,7 +482,7 @@ ul li::before {
     left: 8px;
     background-size: cover;
     background-position: center;
-	background-image: url(./assets/dry-clean.png);
+	background-image: url(../assets/dry-clean.png);
 }
 
 ul li.checked {
@@ -491,7 +491,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-    background-image: url(./assets/verified.png);
+    background-image: url(../assets/verified.png);
 	height: 20px;
 	width: 20px;
 }

@@ -1,4 +1,5 @@
 const user = JSON.parse(localStorage.getItem('user'));
+
 async function addToFirestore(task, collectionName, listContainer) {
     try {
         const Email = user.email;
@@ -39,11 +40,13 @@ listContainer1.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
         saveData(listContainer1);
+
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer1);
     }
 })
+
 listContainer2.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
@@ -92,6 +95,7 @@ function showTask(collectionName, listContainer) {
 async function showTaskFromFirestore(collectionName, listContainer) {
     try {
         const Email = user.email;
+        listContainer.innerHTML = '';
 
         const snapshot = await db.collection("Task").doc(Email).collection(`listContainer${collectionName}`).get();
         snapshot.forEach(doc => {
