@@ -162,12 +162,12 @@ header {
 }
 .todolistlogo-brown{
 	display: flex;
-	width: 50%;
+	width: 53%;
 	margin: 0 0 0 25%;
 }
 .todolistlogo-white{
 	display: none;
-	width: 52%;
+	width: 55%;
 	margin: 0 0 0 25%;
 }
 .calendar{
@@ -183,18 +183,18 @@ header {
 	margin-top: 15%;
 }
 .gif img{
-	height: 40%;
-	width: 40%;
-	margin-left: 30%;
+	height: 50%;
+	width: 50%;
+	margin-left: 25%;
 }
 .gif2{
 	display: none;
 	margin-top: 15%;
 }
 .gif2 img{
-	height: 45%;
-	width: 45%;
-	margin-left: 30%;
+	height: 50%;
+	width: 50%;
+	margin-left: 27%;
 }
 
 .personal{
@@ -220,6 +220,7 @@ header {
 	height: 40px;
 	float: left;
 	margin: 1rem;
+	margin-left: 2%;
 }
 .greeting .title {
 	display: flex;
@@ -314,7 +315,7 @@ header {
 
 /* Move the thumb when the input is checked */
 .slider input:checked + .slider-track {
-	background-color: #808080;
+	background-color: #909090;
 }
 
 /* Slide the thumb to the right when the input is checked */
