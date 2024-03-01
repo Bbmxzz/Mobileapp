@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
 
 * {
-    
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family:  "Literata", sans-serif;
   }
@@ -12,7 +13,8 @@ body {
 
 section {
     position: relative;
-    max-width: 100%;
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,20 +22,20 @@ section {
 }
 
 section .container {
-    margin: 2%;
+    padding: 30px;
     background-color: #fffde6;
     border-radius: 15px;
-    max-width: 40%;
+    max-width: 500px;
     border: rgba(255, 255, 255, 0.4) solid thin;
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5);
 }
 
 section h1 {
-    font-size: 60px;
+    font-size: 40px;
     color: #523109;
     text-align: center;
-    margin-top: 5%;
-    margin-bottom: 2%;
+    font-weight: 600;
+    margin-top: 5px;
 }
 
 .formforgot img {
@@ -82,11 +84,10 @@ section .form-control div {
 }
 
 section .form-control p {
-
-    font-size: 20px;
-    margin-bottom: 5%;
-    margin-top: 2%;
-    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
     text-align: center;
     justify-content: center;
     color: #9a0404;;
@@ -97,11 +98,10 @@ section .form-control input {
     border-radius: 20px;
     border: 1px solid #7a6446;
     background-color: #ecc5fb;
-    padding: 2%;
-    margin-bottom: 3%;
-    text-indent: 19px;
-    font-size: 17px;
-    width: 85%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    text-indent: 16px;
+    width: 75%;
     color: black;
     outline: none;
     display: inline-block;
@@ -130,8 +130,9 @@ section .form-control h4 span a {
     display: inline-block;
     font-size: 15px;
     text-decoration: none;
+    font-weight: 600;
     color: #ff0066;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -139,17 +140,18 @@ section .form-control button {
     display: flex;
     text-align: center;
     justify-content: center;
-    border: 1px solid #7a6446;
+    border: 3px solid #7a6446;
     width: 30%;
     cursor: pointer;
-    font-weight: 3%;
+    font-weight: 300;
     font-size: 16px;
     border-radius: 20px;
     background-color: lightpink;
     color: black;
-    padding: 1.3% 0;
-    margin-top: 1%;
-    margin-bottom: 2%;
+    font-weight: 500;
+    padding: 3px 0;
+    margin-top: 13px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     transition: 500ms;
