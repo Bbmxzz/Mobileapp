@@ -167,14 +167,12 @@
 
 	<script>
 		const userData = JSON.parse(localStorage.getItem('user'));
-		console.log(userData);
 		const fetchDisplayNameFromFirestore = async () => {
 			try {
 				const snapshot = await db.collection('users').get();
 				snapshot.forEach(doc => {
 					if (doc.id === userData.uid) {
                 		const userData = doc.data().displayName;
-                		console.log(userData);
 						document.getElementById('displayName').textContent = userData;
             		}
 				});

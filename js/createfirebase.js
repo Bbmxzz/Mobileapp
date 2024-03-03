@@ -40,10 +40,7 @@ listContainer1.addEventListener("click", function (e) {
         saveData(listContainer1);
 
         const status = e.target.classList.contains("checked") ;
-        console.log(status);
-        console.log(e.target.classList);
         const taskName = e.target.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
         updateTaskStatus(taskName, "1", status);
 
     } else if (e.target.tagName === "SPAN") {
@@ -51,8 +48,6 @@ listContainer1.addEventListener("click", function (e) {
         saveData(listContainer1);
 
         const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
-
         deleteTask(taskName, "1");
     }
 })
@@ -63,17 +58,14 @@ listContainer2.addEventListener("click", function (e) {
         saveData(listContainer2);
 
         const status = e.target.classList.contains("checked") ;
-        console.log(status);
         const taskName = e.target.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
         updateTaskStatus(taskName, "2", status);
 
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer2);
-        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
 
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
         deleteTask(taskName, "2");
     }
 })
@@ -83,17 +75,14 @@ listContainer3.addEventListener("click", function (e) {
         saveData(listContainer3);
 
         const status = e.target.classList.contains("checked") ;
-        console.log(status);
         const taskName = e.target.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
         updateTaskStatus(taskName, "3", status);
 
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer3);
-        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
 
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
         deleteTask(taskName, "3");
     }
 })
@@ -103,17 +92,14 @@ listContainer4.addEventListener("click", function (e) {
         saveData(listContainer4);
 
         const status = e.target.classList.contains("checked") ;
-        console.log(status);
         const taskName = e.target.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
         updateTaskStatus(taskName, "4", status);
 
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer4);
-        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
 
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
         deleteTask(taskName, "4");
     }
 })
@@ -123,17 +109,14 @@ listContainer5.addEventListener("click", function (e) {
         saveData(listContainer5);
 
         const status = e.target.classList.contains("checked") ;
-        console.log(status);
         const taskName = e.target.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
         updateTaskStatus(taskName, "5", status);
 
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer5);
-        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
 
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
         deleteTask(taskName, "5");
     }
 })
@@ -143,17 +126,14 @@ listContainer6.addEventListener("click", function (e) {
         saveData(listContainer6);
 
         const status = e.target.classList.contains("checked") ;
-        console.log(status);
         const taskName = e.target.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
         updateTaskStatus(taskName, "6", status);
 
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData(listContainer6);
-        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
-        console.log("Task Name:", taskName);
 
+        const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
         deleteTask(taskName, "6");
     }
 })
@@ -238,7 +218,7 @@ async function deleteTask(task, collectionName) {
             doc.ref.update({ plan:"", status: "" }); 
         });
 
-        console.log("Documents successfully deleted and renumbered!");
+        console.log("Documents successfully deleted!");
     } catch (error) {
         console.error("Error deleting documents: ", error);
     }

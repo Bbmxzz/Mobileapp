@@ -8,7 +8,7 @@ document.getElementById("addDataForm").addEventListener("submit", async function
 
 
     if (password.length < 6) {
-        console.error("Error registering user: Password should be at least 6 characters");
+        alert("Error registering user: Password should be at least 6 characters");
     } else {
         if(password==confirmpassword){
             try {
