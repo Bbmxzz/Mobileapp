@@ -309,7 +309,7 @@ header {
 	background-color: #909090;
 }
 .slider input:checked + .slider-track .slider-thumb{
-	transform: translateX(23px);
+	transform: translateX(1.5vw);
 	background-color: #2b2b2b;
 	margin-left: 22%;
 	border-color:#2b2b2b;
