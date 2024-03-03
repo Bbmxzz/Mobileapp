@@ -152,22 +152,23 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-	margin-top: 10%;
-	margin-left: 8.5%;
-	width: 45vh;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20vw;
 	height: 40px;
 	border: 2px solid #523109;
 	font-size: large;
 }
 .todolistlogo-brown{
 	display: flex;
-	width: 53%;
-	margin: 0 0 0 25%;
+	width: 16vw;
+	margin: 0 auto 0 auto;
 }
 .todolistlogo-white{
 	display: none;
-	width: 55%;
-	margin: 0 0 0 25%;
+	width: 18vw;
+	margin: 0 auto 0 auto;
 }
 .calendar{
 	height: 20px;
@@ -218,8 +219,7 @@ header {
 	width: 40px;
 	height: 40px;
 	float: left;
-	margin: 1rem;
-	margin-left: 2%;
+	margin: 16px 1vw 0 1vw ;
 }
 .greeting .title {
 	display: flex;
@@ -270,9 +270,9 @@ header {
 	display: flex;
     justify-content: center;
 	float: inline-end;
-	width: 5%;
-	height: 32px;
-	margin: 19px 5% 19px 0;
+	width: 5vw;
+	height: 2.5vw;
+	margin: 1rem 5% 0 0;
 }
 .slider input{
 	display: none;
@@ -301,15 +301,15 @@ header {
 	border: 1px solid #523109;
 	border-radius: 60px;
 	transition: .4s;
-	width: 4vh;
-	height: 4vh;
-	margin: 0.3vh;
+	width: 2vw;
+	height: 2vw;
+	margin: auto 0.3vw auto 0.3vw;
 }
 .slider input:checked + .slider-track{
 	background-color: #909090;
 }
 .slider input:checked + .slider-track .slider-thumb{
-	transform: translateX(26px);
+	transform: translateX(23px);
 	background-color: #2b2b2b;
 	margin-left: 22%;
 	border-color:#2b2b2b;
