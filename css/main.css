@@ -336,7 +336,7 @@ header {
 
 	.greeting .title {
 		display: flex;
-		height: 100%;
+		vertical-align: middle;
 		margin: 23px 0 23px 0;
 	}
 	.greeting .title input {
@@ -428,9 +428,9 @@ header {
 		width: 10vh;
 	}
 	.slider .slider-thumb{
-		width: 25px;
+		width: 4vh;
 		height: 25px;
-		margin: auto 2% auto 2%;
+		margin: auto 0.4vh auto 0.4vh;
 	}
 	.bottombar{
 		height: 10vh;
