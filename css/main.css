@@ -382,10 +382,12 @@ header {
 		display: none;
 	}
 	.todolistlogo-brown{
+		width: 50vw;
 		margin: 0 0 0 27%;
 	}
 	.todolistlogo-white{
-		margin: 0 0 0 29%;
+		width: 52vw;
+		margin: 0 0 0 27%;
 	}
 	.logo{
 		margin: 1rem 2vw 0 4vw ;
@@ -394,7 +396,7 @@ header {
 		width: 70%;
 	}
 	.add{
-		width: 8vw;
+		width: 2rem;
 	}
 
 	.logoutbtn2{
