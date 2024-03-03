@@ -155,8 +155,8 @@ header {
 	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 20vw;
-	height: 40px;
+	width: 22vw;
+	height: 45px;
 	border: 2px solid #523109;
 	font-size: large;
 }
@@ -219,7 +219,7 @@ header {
 	width: 40px;
 	height: 40px;
 	float: left;
-	margin: 16px 1vw 0 1vw ;
+	margin: 16px 1vw 0 2vw ;
 }
 .greeting .title {
 	display: flex;
@@ -246,7 +246,7 @@ header {
     background-color: #faf4b7;
     color: #523109;
     padding: 10px 50px 30px;
-    margin: 0.8rem 5% 0 0;
+    margin: 14px 2vw 0 0;
 	border: solid 2px;
     border-color: #523109;
     border-radius: 50px;
@@ -270,9 +270,9 @@ header {
 	display: flex;
     justify-content: center;
 	float: inline-end;
-	width: 5vw;
-	height: 2.5vw;
-	margin: 1rem 5% 0 0;
+	width: 75px;
+	height: 35px;
+	margin: 18px 2% 0 0;
 }
 .slider input{
 	display: none;
@@ -301,17 +301,18 @@ header {
 	border: 1px solid #523109;
 	border-radius: 60px;
 	transition: .4s;
-	width: 2vw;
-	height: 2vw;
+	width: 27px;
+	height: 27px;
 	margin: auto 0.3vw auto 0.3vw;
 }
 .slider input:checked + .slider-track{
 	background-color: #909090;
+	border: 1px solid #2b2b2b;
 }
 .slider input:checked + .slider-track .slider-thumb{
-	transform: translateX(23px);
+	transform: translateX(25px);
 	background-color: #2b2b2b;
-	margin-left: 22%;
+	margin-left: 23%;
 	border-color:#2b2b2b;
 }
 .slider-label{
@@ -319,7 +320,7 @@ header {
 }
 
 .add{
-	width: 4vh;
+	width: 30px;
 	font-size: 24px;
 }
 
@@ -332,10 +333,6 @@ header {
 		.logoutbtn2{
 			background-color: #F2F597;
 		}
-	}
-
-	header{
-		height: 4.5rem;
 	}
 
 	.greeting .title {
@@ -390,13 +387,13 @@ header {
 		margin: 0 0 0 27%;
 	}
 	.logo{
-		margin: 1rem 2vw 0 4vw ;
+		margin: 15px 2vw 0 4vw ;
 	}
 	.addtext{
 		width: 70%;
 	}
 	.add{
-		width: 1.9rem;
+		width: 30px;
 	}
 
 	.logoutbtn2{
@@ -424,21 +421,21 @@ header {
 	}
 
 	.slider{
-		margin: 1.1rem 3vw 0 0;
-		width: 5rem;
-		height: 2.2rem;
+		margin: 18px 4vw 0 0;
+		width: 70px;
+		height: 35px;
 		float: right;
 	}
 	.slider .slider-track{
-		width: 18vw;
+		width: 70px;
 	}
 	.slider .slider-thumb{
-		width: 1.8rem;
-		height: 1.8rem;
-		margin: auto 1vw auto 1vw;
+		width: 27px;
+		height: 27px;
+		margin: auto 4.5px auto 4.5px;
 	}
 	.slider input:checked + .slider-track .slider-thumb{
-		transform: translateX(1.5rem);
+		transform: translateX(22px);
 	}
 	.bottombar{
 		height: 10vh;
