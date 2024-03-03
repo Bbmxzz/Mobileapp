@@ -424,21 +424,21 @@ header {
 	}
 
 	.slider{
-		margin: 1.1rem 4vw 0 0;
-		width: 18vw;
-		height: 9vw;
+		margin: 1.1rem 3vw 0 0;
+		width: 5rem;
+		height: 2.2rem;
 		float: right;
 	}
 	.slider .slider-track{
 		width: 18vw;
 	}
 	.slider .slider-thumb{
-		width: 7vw;
-		height: 7vw;
+		width: 1.8rem;
+		height: 1.8rem;
 		margin: auto 1vw auto 1vw;
 	}
 	.slider input:checked + .slider-track .slider-thumb{
-		transform: translateX(6vw);
+		transform: translateX(1.5rem);
 	}
 	.bottombar{
 		height: 10vh;
