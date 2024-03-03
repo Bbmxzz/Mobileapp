@@ -413,3 +413,25 @@ section .container.active .login .img-box {
   }
 }
 
+@media (max-width: 365px) {
+  section .form-control:first-child input {
+    font-family:  "Literata" ,sans-serif;
+    border-radius: 20px;
+    border: 1px solid #7a6446;
+    background-color: #ffcce0;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    text-indent: 16px;
+    width: 250px;
+    color: var(--color);
+    outline: none;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img-hidden img {
+    width: 75%;
+    height: auto;
+  }
+}
+

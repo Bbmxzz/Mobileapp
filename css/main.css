@@ -224,7 +224,8 @@ header {
 .greeting .title {
 	display: flex;
 	vertical-align: middle;
-	margin: 2.6vh 0 0 0;
+	height: 29;
+	margin: 20.5px 0 20.5px 0;
 }
 
 .greeting .title input {
@@ -270,8 +271,8 @@ header {
     justify-content: center;
 	float: inline-end;
 	width: 5%;
-	height: 5vh;
-	margin: 2.2vh 5% 0 0;
+	height: 32px;
+	margin: 19px 5% 19px 0;
 }
 .slider input{
 	display: none;
@@ -335,7 +336,8 @@ header {
 
 	.greeting .title {
 		display: flex;
-		margin-top: 2.7vh;
+		height: 100%;
+		margin: 23px 0 23px 0;
 	}
 	.greeting .title input {
 		margin-left: 0.5rem;
@@ -418,18 +420,17 @@ header {
 	}
 
 	.slider{
-		margin-right: 5%;
-		margin-top: 3.5%;
+		margin: 20px 5% 20px 5%;
 		width: 10vh;
-		height: 5vh;
+		height: 30px;
 	}
 	.slider .slider-track{
 		width: 10vh;
 	}
 	.slider .slider-thumb{
-		width: 4vh;
-		height: 4vh;
-		margin: 0.4vh;
+		width: 25px;
+		height: 25px;
+		margin: auto 2% auto 2%;
 	}
 	.bottombar{
 		height: 10vh;
@@ -558,3 +559,11 @@ ul li span:hover {
 ::-webkit-scrollbar-thumb:hover {
 	background-color: none;
 }
+@media (max-width: 365px) {
+	.greeting .title {
+		display: flex;
+		font-size: 16px;
+		vertical-align: middle;
+		margin: 27px 0 27px 0;
+	}
+  }
