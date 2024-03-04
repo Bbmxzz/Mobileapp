@@ -1,5 +1,3 @@
-const user = JSON.parse(localStorage.getItem('user'));
-
 async function addToFirestore(task, collectionName, listContainer) {
     try {
         const Email = user.email;

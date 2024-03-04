@@ -147,11 +147,11 @@
             auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
+                    const uid = user.uid;
                     
                     console.log(user);
                     alert("Login successful!");
-                    window.location.href = "/pages/Todolist.html";
-                    localStorage.setItem('user', JSON.stringify(user));   
+                    window.location.href = `/pages/Todolist.html?user=${encodeURIComponent(JSON.stringify(user))}`; 
                 })
                 .catch((error) => {
                     const errorCode = error.code;
