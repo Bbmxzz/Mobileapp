@@ -1,3 +1,5 @@
+const url = new URLSearchParams(window.location.search);
+const user = JSON.parse(url.get('user'));
 async function addToFirestore(task, collectionName, listContainer) {
     try {
         const Email = user.email;
