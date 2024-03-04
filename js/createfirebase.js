@@ -50,7 +50,7 @@ listContainer1.addEventListener("click", function (e) {
         const taskName = e.target.parentElement.innerText.split("\u00d7")[0].trim();
         deleteTask(taskName, "1");
     }
-})
+});
 
 listContainer2.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
@@ -198,11 +198,15 @@ async function deleteTask(task, collectionName) {
         const uid = user.uid;
         const snapshot = await firebase.database().ref(`Task/${uid}/${collectionName}`).orderByChild("plan").equalTo(task).once("value");
         snapshot.forEach(childSnapshot => {
-            childSnapshot.ref.remove();
+            childSnapshot.ref.remove()
+                .then(() => {
+                    console.log("Document successfully deleted!");
+                })
+                .catch(error => {
+                    console.error("Error deleting document: ", error);
+                });
         });
-        console.log("Documents successfully deleted!");
     } catch (error) {
         console.error("Error deleting documents: ", error);
     }
 }
-
