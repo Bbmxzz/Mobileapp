@@ -148,7 +148,8 @@ async function showTaskFromFirestore(collectionName, listContainer) {
         const uid = user.uid;
         const tasks = [];
         var dataRef = firebase.database().ref(`Task/${uid}/${collectionName}`);
-        dataRef.once('value', function(snapshot) {
+        dataRef.on('value', function(snapshot) {
+            listContainer.innerHTML = ''; 
             snapshot.forEach(function(childSnapshot) {
                 var task = childSnapshot.val().plan;
                 if (task != "") {
