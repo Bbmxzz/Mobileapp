@@ -12,7 +12,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 	
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 <body class="light-theme">
@@ -131,28 +131,28 @@
 	<script src="/firebase.js"></script>
 	<script src="/js/createfirebase.js"></script>
 	<script>
-		function addCheckbox() {
-				const customText = document.getElementById('customText').value.trim();
-				
-				if (customText !== '') {
-					const checkboxList = document.getElementById('checkboxList');
-					const listItem = document.createElement('li');
-					const checkbox = document.createElement('input');
-					checkbox.type = 'checkbox';
-					checkbox.id = 'checkbox_' + Date.now();
-					listItem.appendChild(checkbox);
-					
-					const label = document.createElement('label');
-					label.htmlFor = checkbox.id;
-					label.textContent = customText;
-					listItem.appendChild(label);
-					
-					checkboxList.appendChild(listItem);
-					
-					document.getElementById('customText').value = '';
-				}
-  		}
-	</script>
+        function addCheckbox() {
+            const customText = document.getElementById('customText').value.trim();
+            
+            if (customText !== '') {
+                const checkboxList = document.getElementById('checkboxList');
+                const listItem = document.createElement('li');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = 'checkbox_' + Date.now();
+                listItem.appendChild(checkbox);
+                
+                const label = document.createElement('label');
+                label.htmlFor = checkbox.id;
+                label.textContent = customText;
+                listItem.appendChild(label);
+                
+                checkboxList.appendChild(listItem);
+                
+                document.getElementById('customText').value = '';
+            }
+        }
+    </script>
 	<script>
 		function updateDateTime() {
 			const now = new Date();
@@ -169,25 +169,14 @@
 	</script>		
 
 	<script>
-		const urlParams = new URLSearchParams(window.location.search);
-		const userData = JSON.parse(urlParams.get('user'));
-		const fetchDisplayNameFromFirestore = async () => {
-			try {
-				const snapshot = await db.collection('users').get();
-				snapshot.forEach(doc => {
-					if (doc.id === userData.uid) {
-                		const userData = doc.data().displayName;
-						document.getElementById('displayName').textContent = userData;
-            		}
-				});
-			}
-			catch (error) {
-				console.error('Error fetching displayName:', error);
-			}
-		};
-	
-		fetchDisplayNameFromFirestore();
-	</script>
+    	const fetchDisplayNameFromURL = () => {
+        	const urlParams = new URLSearchParams(window.location.search);
+        	const userDataString = urlParams.get('user');
+        	const userData = JSON.parse(decodeURIComponent(userDataString));
+			document.getElementById('displayName').textContent = userData.displayName;
+    	};
 
+    	fetchDisplayNameFromURL();
+	</script>
 </body>
 </html>

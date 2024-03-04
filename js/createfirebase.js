@@ -1,12 +1,12 @@
 const url = new URLSearchParams(window.location.search);
-const user = JSON.parse(url.get('user'));
-async function addToFirestore(task, collectionName, listContainer) {
-    try {
-        const Email = user.email;
+const userString = url.get('user');
+const user = JSON.parse(decodeURIComponent(userString));
 
-        const snapshot = await db.collection("Task").doc(Email).collection(`listContainer${collectionName}`).get();
-        const numberOfCollection = snapshot.size + 1;
-        await db.collection("Task").doc(`${Email}/listContainer${collectionName}/${numberOfCollection}`).set({
+async function addToFirestore(task, collectionName) {
+    try {
+        const uid = user.uid;
+        const link = `Task/${uid}/${collectionName}`;
+        await firebase.database().ref(link).push({
             plan: task
         });
         console.log("Task added successfully!");
@@ -19,11 +19,11 @@ async function addTask(inputBox, collectionName) {
     const task = inputBox.value.trim();
     const listContainer = document.getElementById(`listContainer${collectionName}`);
     if (inputBox.value === "") {
-        alert("You must write something")
+        alert("You must write something");
     } else {
         try {
-            await addToFirestore(task, collectionName, listContainer); 
-            await showTaskFromFirestore(collectionName, listContainer); 
+            await addToFirestore(task, collectionName);
+            await showTaskFromFirestore(collectionName, listContainer);
             inputBox.value = "";
             saveData(listContainer);
         } catch (error) {
@@ -145,26 +145,26 @@ function saveData(listContainer) {
 async function showTaskFromFirestore(collectionName, listContainer) {
     listContainer.innerHTML = '';
     try {
-        const Email = user.email;
-        const snapshot = await db.collection("Task").doc(Email).collection(`listContainer${collectionName}`).get();
-        snapshot.forEach(doc => {
-            const task = doc.data().plan;
-            if(task == ""){
-                
-            }else{
-                let li = document.createElement("li");
-                li.innerHTML = task;
-                listContainer.appendChild(li);
-                let span = document.createElement("span");
-                span.innerHTML = "\u00d7";
-                li.appendChild(span);
-                const status = doc.data().status;
-                if(status == "checked"){
-                    li.classList.toggle(status);
+        const uid = user.uid;
+        const tasks = [];
+        var dataRef = firebase.database().ref(`Task/${uid}/${collectionName}`);
+        dataRef.once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                var task = childSnapshot.val().plan;
+                if (task != "") {
+                    let li = document.createElement("li");
+                    li.innerHTML = task;
+                    listContainer.appendChild(li);
+                    let span = document.createElement("span");
+                    span.innerHTML = "\u00d7";
+                    li.appendChild(span);
+                    const status = childSnapshot.val().status;
+                    if (status == "checked") {
+                        li.classList.toggle(status);
+                    }
+                    tasks.push({ task: task, status: status });
                 }
-            }
-            
-            
+            });
         });
     } catch (error) {
         console.error("Error fetching task: ", error);
@@ -182,23 +182,11 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 async function updateTaskStatus(task, collectionName, status) {
     try {
-        const Email = user.email;
-        const querySnapshot = await db.collection("Task")
-            .doc(Email)
-            .collection(`listContainer${collectionName}`)
-            .where("plan", "==", task)
-            .get();
-
-        if(status){
-            querySnapshot.forEach(doc => {
-                doc.ref.update({ status: "checked" }); 
-            });
-        }else{
-            querySnapshot.forEach(doc => {
-                doc.ref.update({ status: " " });
-            });
-        }
-
+        const uid = user.uid;
+        const snapshot = await firebase.database().ref(`Task/${uid}/${collectionName}`).orderByChild("plan").equalTo(task).once("value");
+        snapshot.forEach(childSnapshot => {
+            childSnapshot.ref.update({ status: status ? "checked" : "" });
+        });
         console.log("Task status updated successfully!");
     } catch (error) {
         console.error("Error updating task status: ", error);
@@ -207,19 +195,14 @@ async function updateTaskStatus(task, collectionName, status) {
 
 async function deleteTask(task, collectionName) {
     try {
-        const Email = user.email;
-        const querySnapshot = await db.collection("Task")
-            .doc(Email)
-            .collection(`listContainer${collectionName}`)
-            .where("plan", "==", task)
-            .get();
-
-        querySnapshot.forEach(doc => {
-            doc.ref.update({ plan:"", status: "" }); 
+        const uid = user.uid;
+        const snapshot = await firebase.database().ref(`Task/${uid}/${collectionName}`).orderByChild("plan").equalTo(task).once("value");
+        snapshot.forEach(childSnapshot => {
+            childSnapshot.ref.remove();
         });
-
         console.log("Documents successfully deleted!");
     } catch (error) {
         console.error("Error deleting documents: ", error);
     }
 }
+
