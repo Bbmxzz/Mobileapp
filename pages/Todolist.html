@@ -169,9 +169,7 @@
 	</script>		
 
 	<script>
-		const urlParams = new URLSearchParams(window.location.search);
-		const userData = JSON.parse(urlParams.get('user'));
-		let user = userData;
+		let userData = user;
 		const fetchDisplayNameFromFirestore = async () => {
 			try {
 				const snapshot = await db.collection('users').get();
