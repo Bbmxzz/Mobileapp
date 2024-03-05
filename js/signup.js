@@ -17,7 +17,7 @@ document.getElementById("addDataForm").addEventListener("submit", async function
                 await user.updateProfile({
                     displayName: username
                 });
-                await db.collection("users").doc(user.uid).set({
+                await firebase.firestore().collection("users").doc(user.uid).set({
                     displayName: username,
                     email: email
                 });
